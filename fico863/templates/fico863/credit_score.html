@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+<body>
+   <div class="container">
+       <div class="credit_score">
+           <div class="table-responsive">
+               <table>
+               <tr class="user">
+                 <td colspan="12">{{ front_report.name }}</td>
+               </tr>
+               <tr>
+                   <td colspan="4">
+                       <h3>信用分数</h3>
+                       <div class="indicatorContainer1"></div>
+                   </td>
+                   <td colspan="4">
+                       <h3>击败人数占比</h3>
+                       <div class="indicatorContainer2"></div>
+                   </td>
+                   <td colspan="4">
+                       <h3>违约率</h3>
+                       <div class="indicatorContainer3"></div>
+                   </td>
+               </tr>
+               <tr>
+                   <td colspan="12">
+                     <p>详细信息<a href="{% url 'report' %}"><img src="../static/image/into.png"></a></p>
+                   </td>
+               </tr>
+               </table>
+           </div>
+
+       </div>
+   </div>
+
+  <script>
+      $('.indicatorContainer1').radialIndicator({
+          barColor: 'red',
+          barWidth: 5,
+          initValue: {{ front_report.score|floatformat:0 }},
+          roundCorner : true,
+          displayNumber: true
+      });
+      $('.indicatorContainer2').radialIndicator({
+          barColor: 'red',
+          barWidth: 5,
+          initValue: {{ front_report.rank|floatformat:0 }},
+          roundCorner : true,
+          percentage: true
+      });
+      $('.indicatorContainer3').radialIndicator({
+          barColor: 'red',
+          barWidth: 5,
+          initValue: {{ front_report.pro|floatformat:0 }},
+          roundCorner : true,
+          percentage: true
+      });
+  </script>
+ {% endblock %}

@@ -1,0 +1,22 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Delete Account" %}{% endblock %}
+{% block subnav %}{% endblock %}
+{% block body %}
+    <!-- <h1>{% trans "Delete Account" %}</h1>
+    
+    <p>{% blocktrans %}If you go ahead and delete your account, your information will be <b>expunged within {{ ACCOUNT_DELETION_EXPUNGE_HOURS }} hours</b>.{% endblocktrans %}</p>
+    
+    <form method="post" action="{% url "account_delete" %}" autocapitalize="off">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">{% trans "Delete My Account" %}</button>
+    </form> -->
+    <div class="account_center">
+    <h2><b>plkj</b>&nbsp;&nbsp;欢迎登录</h2>
+    <p>剩余查询次数:&nbsp;<strong>90次</strong></p>
+    <p>注册时间:&nbsp;<b>2016-2-09 15:07:58</b></p>
+    <p>最后登陆时间:&nbsp;<b>2016-2-09 15:07:58</b></p>
+</div>
+{% endblock %}

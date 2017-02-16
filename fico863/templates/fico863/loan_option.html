@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content%}
+      <div class="loan_option">
+          <div class="table-responsive">
+              <div class="row">
+                          <div class="col-md-1 mod" number="11" align="center">
+                             <img src="../static/image/1.png">
+                             <p>个人住房贷款</p>
+                          </div>
+                      <div class="col-md-1 mod" number="12" align="center">
+                      
+                          <img src="../static/image/2.png">
+                          <p>个人商品房贷款</p>
+                      
+                      </div>
+                      <div class="col-md-1 mod" number="13" align="center">
+                          <img src="../static/image/3.png">
+                          <p>个人公积金贷款</p>
+                      </div>
+                      <div class="col-md-1 mod" number="21" align="center">
+                          <img src="../static/image/4.png">
+                          <p>个人汽车贷款</p>
+                     
+                      </div>
+                      <div class="col-md-1 mod" number="81" align="center">
+               
+                          <img src="../static/image/5.png">
+                          <p>贷记卡</p>
+                  
+                      </div>
+                      <div class="col-md-1 mod" number="41" align="center">
+                     
+                          <img src="../static/image/6.png">
+                          <p>个人经营贷款</p>
+                    
+                      </div>
+                      <div class="col-md-1 mod" number="51" align="center">
+                  
+                          <img src="../static/image/7.png">
+                          <p>个人农户贷款</p>
+               
+                      </div>
+                      <div class="col-md-1 mod" number="31" align="center">
+              
+                          <img src="../static/image/8.png">
+                          <p>个人助学贷款</p>
+               
+                      </div>
+                      <div class="col-md-1 mod" number="99" align="center">
+                     
+                          <img src="../static/image/9.png">
+                          <p>个人消费贷款</p>
+                     
+                      </div>
+                  </div>
+                  
+              </div>
+          <div class="link1">
+                      <a  href="#" role="button" class="btn btn-default btn-md pull-left">返回</a>
+                      <button type="button" class="btn btn-primary btn-md pull-right">贷款评估</button>
+                  </div>
+      </div>
+  <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script>
+    $(function(){
+       $(".mod").hover(      
+    function(){
+      $(this).addClass("mod-hover")
+      if (!$(this).hasClass("mod-select")) {
+        var imgsrc = $(this).children("img").attr("src")
+        var newsrc= imgsrc.substring(0,imgsrc.length-4);       
+      $(this).children("img").attr("src",newsrc+"a.png");
+       }
+    },
+    function(){
+      $(this).removeClass("mod-hover")
+      if (!$(this).hasClass("mod-select")) {
+        var imgsrc = $(this).children("img").attr("src");
+        var newsrc= imgsrc.substring(0,imgsrc.length-5);
+        $(this).children("img").attr("src",newsrc+".png");
+        }
+    }
+    )
+
+    $(".mod").click(function(){   
+   if($(this).siblings(".mod-select").children("img").attr("src")){           
+        var imgsrc=$(this).siblings(".mod-select").children("img").attr("src");
+        var newsrc= imgsrc.substring(0,imgsrc.length-5);
+        $(this).siblings(".mod-select").children("img").attr("src",newsrc+".png");
+        $(this).siblings(".mod-select").removeClass("mod-select");
+    }
+        $(this).addClass("mod-select")
+
+     $(".link1 button").on("click",function(){
+         loantype = $(".mod-select").attr("number");
+         url = "{% url 'loan_option' %}"
+         console.log(url)
+         $.post(url, {"loantype": loantype}, function(data) {
+            window.location.href="{% url 'credit_score' %}"
+         });
+    })
+  })
+  })
+</script>
+{% endblock %}

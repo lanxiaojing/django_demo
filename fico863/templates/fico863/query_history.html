@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content%}
+
+<div class="query_history table-responsive">
+    <table class="table table-bordered table-hover">
+       <thead>
+            <th>编号</th>
+           <th>身份证</th>
+           <th>姓名</th>
+           <th>分数</th>
+           <th>查询时间</th>
+           <th>审贷结果</th>
+           <th>还款情况</th>
+       </thead>
+       <tbody>
+        {% for history in histories %}
+        <tr class="hisInfo">
+            <td>{{ history.id }}</td>
+            <td>{{ history.CERTIFICATECODE }}</td>
+            <td>{{ history.NAME }}</td>
+            <td>{{ history.SCORE }}</td>
+            <td>{{ history.TIMESTAMP }}</td>
+            <td class="Result" name = "CREDITAUDIT">{{ history.CREDITAUDIT }}</td>
+            <td class="Return" name = "PAYMENT">{{ history.PAYMENT }}</td>
+       </tr>
+       {% endfor %}
+       </tbody>
+    </table>
+</div>
+<script>
+ /* $(function(){
+      $(".Result,.Return").click(function(){
+          var newInfo ="<input type='text' value="+$(this).text()+">"
+          $(this).text(" ");
+          $(this).append(newInfo);
+          $(this).find("input").width(60).height(18);
+          $(this).find("input").focus();
+          $(this).find("input").blur(function(){
+                  $(this).parent().text($(this).val());
+              })
+      })
+      $.post("",{});
+  })*/
+  (function(){
+    $(document).ready(function(){
+      $(document).on("click",".Result",function(){
+        var newInfo ="<input type='text' value="+$(this).text()+">"
+        $(this).text(" ");
+        $(this).append(newInfo);
+        var historyId = $(this).parent().find("td").eq(0).text();
+        $(this).find("input").width(60).height(18);
+        $(this).find("input").focus();
+        $(this).find("input").blur(function(){
+          var creditAudit = $(this).val();
+          $(this).closest("td").text($(this).val());
+          $(this).remove();
+          $.post("{% url 'query_history' %}", {"id":historyId,"CREDITAUDIT":creditAudit}, function(data) {
+            
+          });
+        })
+      });
+      $(document).on("click",".Return",function(){
+        var newInfo ="<input type='text' value="+$(this).text()+">"
+        $(this).text(" ");
+        $(this).append(newInfo);
+        var historyId = $(this).parent().find("td").eq(0).text();
+        $(this).find("input").width(60).height(18);
+        $(this).find("input").focus();
+        $(this).find("input").blur(function(){
+          var payMent = $(this).val();
+          $(this).closest("td").text($(this).val());
+          $(this).remove();
+          $.post("{% url 'query_history' %}", {"id":historyId,"PAYMENT":payMent}, function(data) {
+
+          });
+        })
+      });
+    });
+  })();
+</script>
+
+{% endblock %}

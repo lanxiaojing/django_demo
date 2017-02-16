@@ -1,0 +1,1338 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content%}
+    <div class="cont-right">
+      <div class="manual_input">
+        <div class="process-step">
+              <div class="personal-report table-report active">
+                <div class="title">
+                  <h3>个人信用报告</h3>
+                  <h5>(明细)</h5>
+                </div>
+                <div class="table-responsive table-detail personal-credit-report">
+                  <table class="table table-hover table-bordered">
+                    <tr>
+                      <td>报告编号:</td>
+                      <td colspan="4"><input type="text" name="REPORTID" value="" /></td>
+                    </tr>
+                    <tr>
+                      <td>查询请求时间</td>
+                      <td colspan="4"><input type="text" name="REQUESTTIME" value="" /></td>
+                    </tr>
+                    <tr>
+                      <td>报告时间</td>
+                      <td colspan="4"><input type="text" name="REPORTTIME" value="" /></td>
+                    </tr>
+                    <tr>
+                      <th>被查询者姓名</th>
+                      <th>被查询者证件类型</th>
+                      <th>被查询者证件号码</th>
+                      <th>查询操作员</th>
+                      <th>查询原因</th>
+                    </tr>
+                    <tr>
+                      <td><input type="text" name="INFORMANTNAME" value="" /></td>
+                      <td><input type="text" name="CERTIFICATETYPE" value="" /></td>
+                      <td><input type="text" name="CERTIFICATECODE" value="" /></td>
+                      <td><input type="text" name="QUERYOPR" value="" /></td>
+                      <td><input type="text" name="QUERYCODE" value="" /></td>
+                    </tr>
+                  </table>
+                </div>
+                <!--step1-->
+                <div class="basic-message active">
+                    <div class="title">
+                        <h3>一、个人基本信息</h3>
+                    </div>
+                    <div class="table-responsive table-detail">
+                        <table class="table table-hover table-bordered">
+                            <tr class="person" ><th colspan="4">身份信息</th></tr>
+                            <tr>
+                                <th>性别</th>
+                                <th>出生日期</th>
+                                <th>婚姻状况</th>
+                                <th>手机号码</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="GENDER" value=""  /></td>
+                                <td><input type="text" name="BIRTHDAY" value=""  /></td>
+                                <td><input type="text" name="MARRIDGE" value=""  /></td>
+                                <td><input type="text" name="MOBILEPHONE" value=""  /></td>
+                            </tr>
+                            <tr>
+                                <th>数据发生机构名称</th>
+                                <th>数据发生机构名称</th>
+                                <th>数据发生机构名称</th>
+                                <th>数据发生机构名称</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="GENDERORGPRO" value=""  /></td>
+                                <td><input type="text"  name="BIRTHORGPRO" value="" /></td>
+                                <td><input type="text"  name="MARRIDGEORGPRO" value="" /></td>
+                                <td><input type="text"  name="MOBILORGPRO" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th>单位电话</th>
+                                <th>住宅电话</th>
+                                <th>学历</th>
+                                <th>学位</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text"  name="WORKPHONE" value="" /></td>
+                                <td><input type="text"  name="HOMEPHONE" value="" /></td>
+                                <td><input type="text"  name="EDUCATION" value="" /></td>
+                                <td><input type="text"  name="DEGREE" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th>数据发生机构名称</th>
+                                <th>数据发生机构名称</th>
+                                <th>数据发生机构名称</th>
+                                <th>数据发生机构名称</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text"  name="WORKORGPRO" value="" /></td>
+                                <td><input type="text"  name="HOMEORGPRO" value="" /></td>
+                                <td><input type="text"  name="EDUORGPRO" value="" /></td>
+                                <td><input type="text"  name="DEGREEORGPRO" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">通讯地址</th>
+                                <th colspan="2">户籍地址</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" name="CONTACTADDRESS" value="" /></td>
+                                <td colspan="2"><input type="text" name="HOUSEHOLD" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">数据发生机构名称</th>
+                                <th colspan="2">数据发生机构名称</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" name="CONTACTORGPRO" value="" /></td>
+                                <td colspan="2"><input type="text" name="HOUSEORGPRO" value="" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive table-detail">
+                        <table class="table table-hover table-bordered">
+                            <tr><th colspan="5">配偶信息</th></tr>
+                            <tr>
+                                <th>姓名</th>
+                                <th>证件类型</th>
+                                <th>证件号码</th>
+                                <th>工作单位</th>
+                                <th>联系电话</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="COUPLENAME" value="" /></td>
+                                <td><input type="text" name="COUPLECERTYPE" value="" /></td>
+                                <td><input type="text" name="COUPLECERCODE" value="" /></td>
+                                <td><input type="text" name="COUPLECOMPANY" value="" /></td>
+                                <td><input type="text" name="COUPLEPHONE" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th colspan="5">数据发生机构名称</th>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><input type="text" name="ORGINFOPRO" value="" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive table-detail live-msg">
+                        <table class="table table-hover table-bordered">
+                            <tr><th colspan="4">居住信息</th></tr>
+                            <tr class="edit-title">
+                                <th>编号</th>
+                                <th>居住地址</th>
+                                <th>居住状况</th>
+                                <th>信息更新日期</th>
+                            </tr>
+                            <tr class="edit-live" >
+                                <td><input type="text" name="" value="" /></td>
+                                <td><input type="text" name="ADDRESS" value="" /></td>
+                                <td><input type="text" name="LIVINGSTATUS" value="" /></td>
+                                <td><input type="text" name="LIVEINFOUPDATEDATE" value="" /></td>
+                            </tr>
+                            <tr class="edit-live" >
+                                <td><input type="text" name="" value="" /></td>
+                                <td><input type="text" name="ADDRESS" value="" /></td>
+                                <td><input type="text" name="LIVINGSTATUS" value="" /></td>
+                                <td><input type="text" name="LIVEINFOUPDATEDATE" value="" /></td>
+                            </tr>
+                            <tr class="edit-title">
+                                <th>编号</th>
+                                <th colspan="3">数据发生机构名称</th>
+                            </tr>
+                            <tr class="live-organization">
+                                <td><input type="text" name="" value="1" /></td>
+                                <td colspan="3"><input type="text" name="" value="" /></td>
+                            </tr>
+                            <tr class="live-organization">
+                                <td><input type="text" name="" value="2" /></td>
+                                <td colspan="3"><input type="text" name=""   /></td>
+                            </tr>
+                        </table>
+                        <div class="plus-minus-btn">
+                            <button type="button" class="btn btn-default add-btn">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-default minus-btn">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-detail job-msg">
+                        <table class="table table-hover table-bordered">
+                            <tr><th colspan="7">职业信息</th></tr>
+                            <tr class="edit-title">
+                                <th>编号</th>
+                                <th colspan="3">工作单位</th>
+                                <th colspan="3">单位地址</th>
+                            </tr>
+                            <tr class="job-place">
+                                <td><input type="text" name="" value="1"  /></td>
+                                <td colspan="3"><input type="text" name="COMPANY" value=""  /></td>
+                                <td colspan="3"><input type="text" name="COMPANYADDRESS" value=""  /></td>
+                            </tr>
+                            <tr class="job-place">
+                                <td><input type="text" name="" value="2"  /></td>
+                                <td colspan="3"><input type="text" name="COMPANY" value=""  /></td>
+                                <td colspan="3"><input type="text" name="COMPANYADDRESS" value=""  /></td>
+                            </tr>
+                            <tr class="job-place">
+                                <td><input type="text" name="" value="3"  /></td>
+                                <td colspan="3"><input type="text" name="COMPANY" value=""  /></td>
+                                <td colspan="3"><input type="text" name="COMPANYADDRESS" value=""  /></td>
+                            </tr>
+                            <tr class="edit-title">
+                                <th>编号</th>
+                                <th>职业</th>
+                                <th>行业</th>
+                                <th>职务</th>
+                                <th>职称</th>
+                                <th>进入本单位年份</th>
+                                <th>信息更新日期</th>
+                            </tr>
+                            <tr class="job-relate">
+                                <td><input type="text" name="" value="1"  /></td>
+                                <td><input type="text"  name="OCCUPATION" value="--" /></td>
+                                <td><input type="text"  name="INDUSTRY" value="--" /></td>
+                                <td><input type="text"  name="JOB" value="--" /></td>
+                                <td><input type="text"  name="TITLE" value="--" /></td>
+                                <td><input type="text"  name="WORKSTARTDATE" value="--" /></td>
+                                <td><input type="text"  name="OCCUPATIONUPDATEDATE" value="2015.06.17" /></td>
+                            </tr>
+                            <tr class="job-relate">
+                                <td><input type="text"  name="" value="2" /></td>
+                                <td><input type="text" name="OCCUPATION" value="--"  /></td>
+                                <td><input type="text"  name="INDUSTRY" value="信息传输、计算机服务和软件业" /></td>
+                                <td><input type="text"  name="JOB" value="一般员工" /></td>
+                                <td><input type="text"  name="TITLE" value="--" /></td>
+                                <td><input type="text"  name="WORKSTARTDATE" value="2014" /></td>
+                                <td><input type="text"  name="OCCUPATIONUPDATEDATE" value="2014.11.18" /></td>
+                            </tr>
+                            <tr class="job-relate">
+                                <td><input type="text"  name="" value="3" /></td>
+                                <td><input type="text"  name="OCCUPATION" value="--" /></td>
+                                <td><input type="text"  name="INDUSTRY" value="--" /></td>
+                                <td><input type="text"  name="JOB" value="其他" /></td>
+                                <td><input type="text"  name="TITLE" value="初级"/></td>
+                                <td><input type="text"  name="WORKSTARTDATE" value="--" /></td>
+                                <td><input type="text"  name="OCCUPATIONUPDATEDATE" value="2013.10.21" /></td>
+                            </tr>
+                            <tr class="edit-title">
+                                <th>编号</th>
+                                <th colspan="6">数据发生机构名称</th>
+                            </tr>
+                            <tr class="job-organization" >
+                                <td><input type="text"  name="" value="1" /></td>
+                                <td colspan="6"><input type="text"  name="ORGINFOPRO" value="北京住房公积金管理中心" /></td>
+                            </tr>
+                            <tr class="job-organization" >
+                                <td><input type="text"  name="" value="2" /></td>
+                                <td colspan="6"><input type="text"  name="ORGINFOPRO" value="招商银行" /></td>
+                            </tr>
+                            <tr class="job-organization" >
+                                <td><input type="text" value="3" name="" /></td>
+                                <td colspan="6"><input type="text"  name="ORGINFOPRO" value="华夏银行" /></td>
+                            </tr>
+                        </table>
+                        <div class="plus-minus-btn">
+                            <button type="button" class="btn btn-default add-btn">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-default minus-btn">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-general table-report">
+                <div class="title">
+                    <h3>二、信息概要</h3>
+                </div>
+                <div class="table-responsive table-detail">
+                    <table class="table table-hover table-bordered">
+                        <tr><th colspan="10">信用提示</th></tr>
+                        <tr>
+                            <th>个人住房贷款笔数</th>
+                            <th>个人商用房（包括商住两用）贷款笔数</th>
+                            <th>其他贷款笔数</th>
+                            <th>首笔贷款发放月份</th>
+                            <th>贷记卡账户数</th>
+                            <th>首张贷记卡发卡月份</th>
+                            <th>准贷记卡账户数</th>
+                            <th>首张准贷记卡发卡月份</th>
+                            <th>本人声明数目</th>
+                            <th>异议标注数目</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="HOUSELOANNUM" /></td>
+                            <td><input type="text" value="" name="" /></td>
+                            <td><input type="text" value="" name="OTHERLOANNUM" /></td>
+                            <td><input type="text" value="" name="FIRSTLOANMONTHOPEN" /></td>
+                            <td><input type="text" value="" name="LOANCARDNUM" /></td>
+                            <td><input type="text" value="" name="FIRSTLOANCARDMONTHOPEN" /></td>
+                            <td><input type="text" value="" name="CREDITCARDNUM" /></td>
+                            <td><input type="text" value="" name="FIRSTCREDITCARDMONTHOPEN" /></td>
+                            <td><input type="text" value="" name="STATEMENTNUM" /></td>
+                            <td><input type="text" value="" name="OBJECTIONNUM" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-responsive table-detail">
+                    <table class="table table-hover table-bordered">
+                        <tr><th colspan="12">逾期及违约信息概要</th></tr>
+                        <tr>
+                            <th colspan="12">逾期（透支）信息汇总</th>
+                        </tr>
+                        <tr>
+                            <th colspan="4">贷款逾期</th>
+                            <th colspan="4">贷记卡逾期</th>
+                            <th colspan="4">准贷记卡60天以上透支</th>
+                        </tr>
+                        <tr>
+                            <th>笔数</th>
+                            <th>月份数</th>
+                            <th>单月最高逾期总额</th>
+                            <th>最长逾期月数</th>
+                            <th>账户数</th>
+                            <th>月份数</th>
+                            <th>单月最高逾期总额</th>
+                            <th>最长逾期月数</th>
+                            <th>账户数</th>
+                            <th>月份数</th>
+                            <th>单月最高透支总额</th>
+                            <th>最长透支月数</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="LOANPASTDUENUM" /></td>
+                            <td><input type="text" value="" name="LOANPASTDUEMONTH" /></td>
+                            <td><input type="text" value="" name="LOANMAXPASTDUEAMOUNT" /></td>
+                            <td><input type="text" value="" name="LOANLONGESTPASTDUEMONTHS" /></td>
+                            <td><input type="text" value="" name="LOANCARDPASTDUENUM" /></td>
+                            <td><input type="text" value="" name="LOANCARDPASTDUEMONTH" /></td>
+                            <td><input type="text" value="" name="LOANCARDMAXPASTDUEAMOUNT" /></td>
+                            <td><input type="text" value="" name="LOANCARDLONGESTPASTDUEMONTHS" /></td>
+                            <td><input type="text" value="" name="CREDITCARDPASTDUENUM" /></td>
+                            <td><input type="text" value="" name="CREDITCARDPASTDUEMONTH" /></td>
+                            <td><input type="text" value="" name="CREDITCARDMAXPASTDUEAMOUNT" /></td>
+                            <td><input type="text" value="" name="CREDITCARDLONGESTPASTDUEMONTHS" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-responsive table-detail">
+                    <table class="table table-hover table-bordered">
+                        <tr><th colspan="8">授信及负债信息概要</th></tr>
+                        <tr>
+                            <th colspan="8">未结清贷款信息汇总</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">贷款法人机构数</th>
+                            <th>贷款机构数</th>
+                            <th>笔数</th>
+                            <th>合同总额</th>
+                            <th>余额</th>
+                            <th>最近6个月平均应还款</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="text" value="" name="INPAYLOANLEGALORG" /></td>
+                            <td><input type="text" value="" name="INPAYLOANORG" /></td>
+                            <td><input type="text" value="" name="INPAYLOANNUM" /></td>
+                            <td><input type="text" value="" name="INPAYLOANTOTALCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYLOANTOTALBALANCE" /></td>
+                            <td><input type="text" value="" name="INPAYLOANRECENT6AVGPAYAMOUNT" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="8">未销户贷记卡信息汇总</th>
+                        </tr>
+                        <tr>
+                            <th>发卡法人机构数</th>
+                            <th>发卡机构数</th>
+                            <th>账户数</th>
+                            <th>授信总额</th>
+                            <th>单家行最高授信额</th>
+                            <th>单家行最低授信额</th>
+                            <th>已用额度</th>
+                            <th>最近6个月平均使用额度</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="INPAYLOANCARDLEGALORG" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDORGNUM" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDNUM" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDTOTALCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDMAXCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDMINCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDBALANCE" /></td>
+                            <td><input type="text" value="" name="INPAYLOANCARDRECENT6AVGDEBT" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="8">未销户准贷记卡信息汇总</th>
+                        </tr>
+                        <tr>
+                            <th>发卡法人机构数</th>
+                            <th>发卡机构数</th>
+                            <th>账户数</th>
+                            <th>授信总额</th>
+                            <th>单家行最高授信额</th>
+                            <th>单家行最低授信额</th>
+                            <th>透支余额</th>
+                            <th>最近6个月平均使用额度</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="INPAYCREDITCARDLEGALINSTITUTES" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDINSTITUTES" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDNUM" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDTOTALCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDMAXCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDMINCREDITLIMIT" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDBALANCE" /></td>
+                            <td><input type="text" value="" name="INPAYCREDITCARDRECENT6AVGDEBT" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="block_transaction table-report">
+                <div class="title">
+                    <h3>三、信贷交易信息明细</h3>
+                </div>
+                <div class="table-responsive table-detail">
+                    <div class="title-use">
+                        <h4>贷款</h4>
+                    </div>
+                    <table class="table table-hover loan">
+                        <tr class="transaction-des">
+                            <td colspan="7">1.<input type="text" name="DATEOPENED" value="2012年1月1日" />机构<input type="text" name="FINANCENAME" value="“GK”" />发放的<input type="text" name="CREDITLIMIT" value="200，000" />元<input type="text" name="CURRENCYNAME" value="人民币" /><input type="text" name="TYPENAME" value="个人经营性贷款" />，
+                                业务号<input type="text" name="" value="123" />，<input type="text" name="GUARANTEEWAYNAME" value="信用/免担保" />,<input type="text" name="MONTHDURATION" value="7期" />，<input type="text" name="TERMSFREQNAME" value="按月归还" />，
+                                <input type="text" name="DATECLOSED" value="2015年01月06日" />到期，截至<input type="text" name="STATENDDATE" value="2014年09月21日" />。
+                                <button type="button" class="close function-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </td>
+                        </tr>
+                        <tr class="account-status">
+                            <th>五级分类</th>
+                            <th>本金金额</th>
+                            <th>剩余还款期数</th>
+                            <th>本月应还款</th>
+                            <th>应还款日</th>
+                            <th>本月实还款</th>
+                            <th>最近一次还款日期</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="CLASS5STAT" /></td>
+                            <td><input type="text" value="" name="BALANCE" /></td>
+                            <td><input type="text" value="" name="MONTHUNPAID" /></td>
+                            <td><input type="text" value="" name="SCHEDUALEDAMOUNT" /></td>
+                            <td><input type="text" value="" name="BILLINGDATE" /></td>
+                            <td><input type="text" value="" name="ACTUALPAYAMOUNT" /></td>
+                            <td><input type="text" value="" name="RECENTPAYDATE" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">当前逾期期数</th>
+                            <th>当前逾期金额</th>
+                            <th>逾期31-60天未还本金</th>
+                            <th>逾期61-90天未还本金</th>
+                            <th>逾期91-180天未还本金</th>
+                            <th>逾期180天未还本金</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" value="" name="CURTERMPASTDUE" /></td>
+                            <td><input type="text" value="" name="CURAMOUNTPASTDUE" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE30" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE60" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE90" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE180" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="7">过去24月还款情况</th>
+                        </tr>
+                        <tr>
+                            <td colspan="7"><input type="text" name="PAYSTAT24MONTH" value="*************" /></td>
+                        </tr>
+                    </table>
+                    <table class="table table-hover loan">
+                        <tr class="transaction-des">
+                            <td colspan="7">2.<input type="text" name="DATEOPENED" value="2012年1月1日" />机构<input type="text" name="FINANCENAME" value="“GK”" />发放的<input type="text" name="CREDITLIMIT" value="200，000" />元<input type="text" name="CURRENCYNAME" value="人民币" /><input type="text" name="TYPENAME" value="个人经营性贷款" />，
+                                业务号<input type="text" name="" value="123" />，<input type="text" name="GUARANTEEWAYNAME" value="信用/免担保" />,<input type="text" name="MONTHDURATION" value="7期" />，<input type="text" name="TERMSFREQNAME" value="按月归还" />，
+                                <input type="text" name="DATECLOSED" value="2015年01月06日" />到期，截至<input type="text" name="STATENDDATE" value="2014年09月21日" />。
+                                <button type="button" class="close function-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </td>
+                        </tr>
+                        <tr class="account-status">
+                            <th>五级分类</th>
+                            <th>本金金额</th>
+                            <th>剩余还款期数</th>
+                            <th>本月应还款</th>
+                            <th>应还款日</th>
+                            <th>本月实还款</th>
+                            <th>最近一次还款日期</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="CLASS5STAT" /></td>
+                            <td><input type="text" value="" name="BALANCE" /></td>
+                            <td><input type="text" value="" name="MONTHUNPAID" /></td>
+                            <td><input type="text" value="" name="SCHEDUALEDAMOUNT" /></td>
+                            <td><input type="text" value="" name="BILLINGDATE" /></td>
+                            <td><input type="text" value="" name="ACTUALPAYAMOUNT" /></td>
+                            <td><input type="text" value="" name="RECENTPAYDATE" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">当前逾期期数</th>
+                            <th>当前逾期金额</th>
+                            <th>逾期31-60天未还本金</th>
+                            <th>逾期61-90天未还本金</th>
+                            <th>逾期91-180天未还本金</th>
+                            <th>逾期180天未还本金</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" value="" name="CURTERMPASTDUE" /></td>
+                            <td><input type="text" value="" name="CURAMOUNTPASTDUE" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE30" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE60" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE90" /></td>
+                            <td><input type="text" value="" name="AMOUNTPASTDUE180" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="7">过去24月还款情况</th>
+                        </tr>
+                        <tr>
+                            <td colspan="7"><input type="text" name="PAYSTAT24MONTH" value="*************" /></td>
+                        </tr>
+                    </table>
+                    <div class="add-btn">
+                        <button type="button" class="btn btn-default btn-lg">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus
+                        </button>
+                    </div>
+                </div>
+                <div class="table-responsive table-detail">
+                    <div class="title-use">
+                        <h4>贷记卡</h4>
+                    </div>
+                    <table class="table table-hover debit-card">
+                        <tr class="transaction-des">
+                            <td colspan="5">1.<input type="text" name="DATEOPENED" value="2012年10月11日" />机构<input type="text" name="FINANCENAME" value="“AF”" />发放的贷记卡<input type="text" name="CURRENCYNAME" value="(人民币账户)" />，
+                                业务号<input type="text" name="" value="1234" />，授信额度<input type="text" name="CREDITLIMIT" value="10,000" />元,<input type="text" name="GUARANTEEWAYNAME" value="信用/免担保" />,截至<input type="text" name="STATENDDATE" value="2014年09月27日" />。
+                                <button type="button" class="close function-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </td>
+                        </tr>
+                        <tr class="account-status">
+                            <th>共享额度</th>
+                            <th>已用额度</th>
+                            <th>最近6个月平均使用额度</th>
+                            <th>最大使用额度</th>
+                            <th>本月应还款</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="SHAREAMOUNT" /></td>
+                            <td><input type="text" value="" name="BALANCE" /></td>
+                            <td><input type="text" value="" name="AVG6AMOUNT" /></td>
+                            <td><input type="text" value="" name="MAXDEBT" /></td>
+                            <td><input type="text" value="" name="SCHEDUALEDAMOUNT" /></td>
+                        </tr>
+                        <tr>
+                            <th>账单日</th>
+                            <th>本月实还款</th>
+                            <th>最近一次还款日期</th>
+                            <th>当前逾期期数</th>
+                            <th>当前逾期金额</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="ACCOUNTDATE" /></td>
+                            <td><input type="text" value="" name="ACTUALPAYAMOUNT" /></td>
+                            <td><input type="text" value="" name="RECENTPAYDATE" /></td>
+                            <td><input type="text" value="" name="CURTERMPASTDUE" /></td>
+                            <td><input type="text" value="" name="CURAMOUNTPASTDUE" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="5">过去24月还款情况</th>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><input type="text" name="PAYSTAT24MONTH" value="*************" /></td>
+                        </tr>
+                    </table>
+                    <table class="table table-hover debit-card">
+                        <tr class="transaction-des">
+                            <td colspan="5">2.<input type="text" name="DATEOPENED" value="2011年06月03日" />机构<input type="text" name="FINANCENAME" value="“AF”" />发放的贷记卡<input type="text" name="CURRENCYNAME" value="(人民币账户)" />，
+                                业务号<input type="text" name="" value="1234" />，授信额度<input type="text" name="CREDITLIMIT" value="10,000" />元,<input type="text" name="GUARANTEEWAYNAME" value="信用/免担保" />,截至<input type="text" name="STATENDDATE" value="2014年09月27日" />。
+                                <button type="button" class="close function-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </td>
+                        </tr>
+                        <tr class="account-status">
+                            <th>共享额度</th>
+                            <th>已用额度</th>
+                            <th>最近6个月平均使用额度</th>
+                            <th>最大使用额度</th>
+                            <th>本月应还款</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="SHAREAMOUNT" /></td>
+                            <td><input type="text" value="" name="BALANCE" /></td>
+                            <td><input type="text" value="" name="AVG6AMOUNT" /></td>
+                            <td><input type="text" value="" name="MAXDEBT" /></td>
+                            <td><input type="text" value="" name="SCHEDUALEDAMOUNT" /></td>
+                        </tr>
+                        <tr>
+                            <th>账单日</th>
+                            <th>本月实还款</th>
+                            <th>最近一次还款日期</th>
+                            <th>当前逾期期数</th>
+                            <th>当前逾期金额</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="ACCOUNTDATE" /></td>
+                            <td><input type="text" value="" name="ACTUALPAYAMOUNT" /></td>
+                            <td><input type="text" value="" name="RECENTPAYDATE" /></td>
+                            <td><input type="text" value="" name="CURTERMPASTDUE" /></td>
+                            <td><input type="text" value="" name="CURAMOUNTPASTDUE" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="5">过去24月还款情况</th>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><input type="text" name="PAYSTAT24MONTH" value="*************" /></td>
+                        </tr>
+                    </table>
+                    <div class="add-btn">
+                        <button type="button" class="btn btn-default btn-lg">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus
+                        </button>
+                    </div>
+                </div>
+                <div class="table-responsive table-detail">
+                    <div class="title-use">
+                        <h4>准贷记卡</h4>
+                    </div>
+                    <table class="table table-hover semi-credit-card">
+                        <tr class="transaction-des">
+                            <td colspan="8">1.<input type="text" name="DATEOPENED" value="2013年02月22日" />机构<input type="text" name="FINANCENAME" value="“ZI”" />发放的准贷记卡<input type="text" name="CURRENCYNAME" value="(人民币账户)" />，
+                                业务号<input type="text" name="" value="12345" />，授信额度<input type="text" name="CREDITLIMIT" value="0" />元,<input type="text" name="GUARANTEEWAYNAME" value="信用/免担保" />,截至<input type="text" name="STATENDDATE" value="2014年08月23日" />。
+                                <button type="button" class="close function-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </td>
+                        </tr>
+                        <tr class="account-status">
+                            <th>共享额度</th>
+                            <th>透支额度</th>
+                            <th>最近6个月平均透支余额</th>
+                            <th>最大透支余额</th>
+                            <th>账单日</th>
+                            <th>本月实还款</th>
+                            <th>最近一次还款日期</th>
+                            <th>透支180天以上未付余额</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="0" name="SHAREAMOUNT" /></td>
+                            <td><input type="text" value="0" name="BALANCE" /></td>
+                            <td><input type="text" value="0" name="AVG6AMOUNT" /></td>
+                            <td><input type="text" value="0" name="MAXDEBT" /></td>
+                            <td><input type="text" value="2014.08.23" name="ACCOUNTDATE" /></td>
+                            <td><input type="text" value="0" name="ACTUALPAYAMOUNT" /></td>
+                            <td><input type="text" value="2013.02.22" name="RECENTPAYDATE" /></td>
+                            <td><input type="text" value="0" name="UNPAID180" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="8">过去24月还款情况</th>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><input type="text" name="PAYSTAT24MONTH" value="*************" /></td>
+                        </tr>
+                    </table>
+                    <table class="table table-hover semi-credit-card">
+                        <tr class="transaction-des">
+                            <td colspan="8">2.<input type="text" name="DATEOPENED" value="2013年02月22日" />机构<input type="text" name="FINANCENAME" value="“ZI”" />发放的准贷记卡<input type="text" name="CURRENCYNAME" value="(人民币账户)" />，
+                                业务号<input type="text" name="" value="12345" />，授信额度<input type="text" name="CREDITLIMIT" value="0" />元,<input type="text" name="GUARANTEEWAYNAME" value="信用/免担保" />,截至<input type="text" name="STATENDDATE" value="2014年08月23日" />。
+                                <button type="button" class="close function-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </td>
+                        </tr>
+                        <tr class="account-status">
+                            <th>共享额度</th>
+                            <th>透支额度</th>
+                            <th>最近6个月平均透支余额</th>
+                            <th>最大透支余额</th>
+                            <th>账单日</th>
+                            <th>本月实还款</th>
+                            <th>最近一次还款日期</th>
+                            <th>透支180天以上未付余额</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="0" name="SHAREAMOUNT" /></td>
+                            <td><input type="text" value="0" name="BALANCE" /></td>
+                            <td><input type="text" value="0" name="AVG6AMOUNT" /></td>
+                            <td><input type="text" value="0" name="MAXDEBT" /></td>
+                            <td><input type="text" value="2014.08.23" name="ACCOUNTDATE" /></td>
+                            <td><input type="text" value="0" name="ACTUALPAYAMOUNT" /></td>
+                            <td><input type="text" value="2013.02.22" name="RECENTPAYDATE" /></td>
+                            <td><input type="text" value="0" name="UNPAID180" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="8">过去24月还款情况</th>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><input type="text" name="PAYSTAT24MONTH" value="*************" /></td>
+                        </tr>
+                    </table>
+                    <div class="add-btn">
+                        <button type="button" class="btn btn-default btn-lg">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="message-detail table-report">
+                <div class="title">
+                    <h3>四、公共信息明细</h3>
+                </div>
+                <div class="table-responsive table-detail accumulation-fund-record">
+                    <table class="table table-hover table-bordered">
+                        <tr><th colspan="9">住房公积金参缴记录</th></tr>
+                        <tr class="edit-title">
+                            <th>编号</th>
+                            <th>参缴地</th>
+                            <th>参缴日期</th>
+                            <th>初缴月份</th>
+                            <th>缴至月份</th>
+                            <th>缴费状态</th>
+                            <th>月缴存额</th>
+                            <th>个人缴存比例</th>
+                            <th>单位缴存比例</th>
+                        </tr>
+                        <tr class="accumulation-fund-list">
+                            <td><input type="text" value="1" name="" /></td>
+                            <td><input type="text" value="北京市市辖区东城区" name="PAYPLACE" /></td>
+                            <td><input type="text" value="2015.02.12" name="PAYDATE" /></td>
+                            <td><input type="text" value="--" name="FIRSTPAYDATE" /></td>
+                            <td><input type="text" value="2015.05" name="PAYENDDATE" /></td>
+                            <td><input type="text" value="缴交" name="PAYSTATUS" /></td>
+                            <td><input type="text" value="720" name="MONTHPAYMENT" /></td>
+                            <td><input type="text" value="12%" name="PERSONPAYRATIO" /></td>
+                            <td><input type="text" value="12%" name="COMPANYPAYRATIO" /></td>
+                        </tr>
+                        <tr class="accumulation-fund-list">
+                            <td><input type="text" value="2" name="" /></td>
+                            <td><input type="text" value="北京市市辖区西城区" name="PAYPLACE" /></td>
+                            <td><input type="text" value="2015.02.12" name="PAYDATE" /></td>
+                            <td><input type="text" value="--" name="FIRSTPAYDATE" /></td>
+                            <td><input type="text" value="2015.05" name="PAYENDDATE" /></td>
+                            <td><input type="text" value="缴交" name="PAYSTATUS" /></td>
+                            <td><input type="text" value="720" name="MONTHPAYMENT" /></td>
+                            <td><input type="text" value="10%" name="PERSONPAYRATIO" /></td>
+                            <td><input type="text" value="10%" name="COMPANYPAYRATIO" /></td>
+                        </tr>
+                        <tr class="edit-title">
+                            <th>编号</th>
+                            <th colspan="7">缴费单位</th>
+                            <th>信息更新日期</th>
+                        </tr>
+                        <tr class="accumulation-payment">
+                            <td><input type="text" value="1" name="" /></td>
+                            <td colspan="7"><input type="text" value="北京雍和金融信息服务有限公司1" name="INSUREDCOMPANY" /></td>
+                            <td><input type="text" value="2015.05.01" name="INFOUPDATEDATE" /></td>
+                        </tr>
+                        <tr class="accumulation-payment">
+                            <td><input type="text" value="2" name="" /></td>
+                            <td colspan="7"><input type="text" value="北京雍和金融信息服务有限公司2" name="INSUREDCOMPANY" /></td>
+                            <td><input type="text" value="2015.05.01" name="INFOUPDATEDATE" /></td>
+                        </tr>
+                    </table>
+                    <div class="plus-minus-btn">
+                        <button type="button" class="btn btn-default add-btn">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default minus-btn">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="check-record table-report">
+                <div class="title">
+                    <h3>五、查询记录</h3>
+                </div>
+                <div class="table-responsive table-detail record-summary">
+                    <table class="table table-hover table-bordered">
+                        <tr><th colspan="8">查询记录汇总</th></tr>
+                        <tr>
+                            <th colspan="2">最近1个月内的查询机构数</th>
+                            <th colspan="3">最近1个月内的查询次数</th>
+                            <th colspan="3">最近2年内的查询次数</th>
+                        </tr>
+                        <tr>
+                            <th>贷款审批</th>
+                            <th>信用卡审批</th>
+                            <th>贷款审批</th>
+                            <th>信用卡审批</th>
+                            <th>本人查询</th>
+                            <th>贷后管理</th>
+                            <th>担保资格审查</th>
+                            <th>特约商户实名审查</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="" name="LOANAPPROVAL_ORG" /></td>
+                            <td><input type="text" value="" name="CREDITAPPROVAL_ORG" /></td>
+                            <td><input type="text" value="" name="LOANAPPROVAL_QUERY" /></td>
+                            <td><input type="text" value="" name="CREDITAPPROVAL_QUERY" /></td>
+                            <td><input type="text" value="" name="PERSONAL_QUERY" /></td>
+                            <td><input type="text" value="" name="LOANMANAGE" /></td>
+                            <td><input type="text" value="" name="GUARANTEEREVIEW" /></td>
+                            <td><input type="text" value="" name="MERCNAMEREVIEW" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-responsive table-detail check-detail">
+                    <table class="table table-hover table-bordered">
+                        <tr><th colspan="4">信贷审批查询记录明细</th></tr>
+                        <tr class="edit-title">
+                            <th>编号</th>
+                            <th>查询日期</th>
+                            <th>查询操作员</th>
+                            <th>查询原因</th>
+                        </tr>
+                        <tr class="check-list">
+                            <td><input type="text" value="1" name="" /></td>
+                            <td><input type="text" value="2015.12.17" name="QUERYDATE" /></td>
+                            <td><input type="text" value="华夏银行/hxzhlx" name="OPER" /></td>
+                            <td><input type="text" value="贷后管理" name="QUERYREASONNAME" /></td>
+                        </tr>
+                        <tr class="check-list">
+                            <td><input type="text" value="2" name="" /></td>
+                            <td><input type="text" value="2015.06.17" name="QUERYDATE" /></td>
+                            <td><input type="text" value="华夏银行/hxzhlx" name="OPER" /></td>
+                            <td><input type="text" value="贷后管理" name="QUERYREASONNAME" /></td>
+                        </tr>
+                        <tr class="check-list">
+                            <td><input type="text" value="3" name="" /></td>
+                            <td><input type="text" value="2014.12.18" name="QUERYDATE" /></td>
+                            <td><input type="text" value="华夏银行/hxzhlx" name="OPER" /></td>
+                            <td><input type="text" value="贷后管理" name="QUERYREASONNAME" /></td>
+                        </tr>
+                        <tr class="check-list">
+                            <td><input type="text" value="4" name="" /></td>
+                            <td><input type="text" value="2014.11.13" name="QUERYDATE" /></td>
+                            <td><input type="text" value="招商银行/CMBUSER002" name="OPER" /></td>
+                            <td><input type="text" value="信用卡审批" name="QUERYREASONNAME" /></td>
+                        </tr>
+                    </table>
+                    <div class="plus-minus-btn">
+                        <button type="button" class="btn btn-default add-btn">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default minus-btn">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operate-page">
+            <ul class="pager">
+                <li class="disabled"><a href="javascript:void(0)" class="prev-page">上一页</a></li>
+                <li><a href="javascript:void(0)" class="next-page">下一页</a></li>
+                <li><a href="javascript:void(0)" class="startUpload">上传</a></li>
+            </ul>
+        </div>
+        <div class="operate">
+            <a href="javascript:void(0)"><button type="button" class="btn btn-primary btn-lg back-step">返回</button></a>
+            <a href="javascript:void(0)"><button type="button" class="btn btn-primary btn-lg next-step">下一步</button></a>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    (function(){
+        $(document).ready(function(){
+            function initHeight(){
+                var navHeightinit = $(".cont-right").outerHeight();
+                $(".nav-left").css("height",navHeightinit);
+            }
+            initHeight();
+            $(document).on("click",".plus-minus-btn .add-btn",function(){
+                   addTr($(this).parent().parent());
+                    initHeight(); 
+            });
+            $(document).on("click",".plus-minus-btn .minus-btn",function(){
+                   deleteTr($(this).parent().parent());
+                    initHeight(); 
+            });
+            $(document).on("click",".block_transaction .add-btn button",function(){
+                var addTransactionTable =  $(this).parent().parent().find("table").eq(0).clone();
+                addTransactionTable.find("input").val("");
+                $(this).parent().before(addTransactionTable);
+            });
+            $(document).on("click",".block_transaction table .function-close",function(){
+              $(this).closest("table").remove();
+            });
+            function addTr(editContName){
+                editContName.find(".edit-title").each(function(){
+                    var addMsg =  $(this).next("tr").clone();
+                    var editTr = $(this).nextUntil(".edit-title");
+                    addMsg.find("input").attr("value","");
+                    addMsg.find("input").eq(0).val(editTr.length+1);
+                    editTr.eq(editTr.length-1).after(addMsg);
+                });
+            }
+            function deleteTr(editContName1){
+                editContName1.find(".edit-title").each(function(){
+                    var editTr = $(this).nextUntil(".edit-title");
+                    if(editTr.length-1 <= 0){
+                        editTr.find("input").attr("value","");
+                        editTr.find("input:first").attr("value","1");
+                        return;
+                    }
+                    editTr.eq(editTr.length-1).remove();
+                });
+            }
+            var steps = 0;
+            var stepLen =$(".manual_input .table-report").length;
+            $(document).on("click",".manual_input .prev-page",function(){
+                steps--;
+                $(".manual_input  .next-page").parent().removeClass("disabled");
+                $(".manual_input .startUpload").hide();
+                if(steps <= 0 ){
+                    steps = 0;
+                    $(this).parent().addClass("disabled");
+                }
+                $(".manual_input .table-report").hide();
+                $(".manual_input .table-report").eq(steps).show();
+            });
+            $(document).on("click",".manual_input .next-page",function(){
+                steps++;
+                $(".manual_input .prev-page").parent().removeClass("disabled");
+                if(steps >= stepLen-1 ){
+                    steps = stepLen-1;
+                    $(this).parent().addClass("disabled")
+                    $(".manual_input .startUpload").show();
+                }
+                $(".manual_input .table-report").hide();
+                $(".manual_input .table-report").eq(steps).show();
+            });
+            $(document).on("click",".operate-page .startUpload",function(){
+                var dataJson = {};
+                var liveMsg = [];
+                var jobMsg = [];
+                var liveLen = $(".live-msg .edit-live").length;
+                var jobLen = $(".job-msg .job-place").length;
+                for(var i=0;i<liveLen;i++){
+                    var liveMsgJson = {};
+                    $(".live-msg .edit-live").eq(i).find("input").each(function(){
+                        liveMsgJson[$(this).attr("name")] = $(this).val();
+                        liveMsgJson["ORGINFOPRO"] =$(".live-msg .live-organization").eq(i).find("input").eq(1).val();
+                    });
+                    liveMsg.push(liveMsgJson);
+                }
+                for(var j=0;j<jobLen;j++){
+                    var jobMsgJson = {};
+                    $(".job-msg .job-place").eq(j).find("input").each(function(){
+                        jobMsgJson[$(this).attr("name")] = $(this).val();
+                        jobMsgJson["OCCUPATION"] =$(".job-msg .job-relate").eq(j).find("input").eq(1).val();
+                        jobMsgJson["INDUSTRY"] =$(".job-msg .job-relate").eq(j).find("input").eq(2).val();
+                        jobMsgJson["JOB"] =$(".job-msg .job-relate").eq(j).find("input").eq(3).val();
+                        jobMsgJson["TITLE"] =$(".job-msg .job-relate").eq(j).find("input").eq(4).val();
+                        jobMsgJson["WORKSTARTDATE"] =$(".job-msg .job-relate").eq(j).find("input").eq(5).val();
+                        jobMsgJson["OCCUPATIONUPDATEDATE"] =$(".job-msg .job-relate").eq(j).find("input").eq(6).val();
+                        jobMsgJson["ORGINFOPRO"] =$(".job-msg .job-organization").eq(j).find("input").eq(1).val();
+                    });
+                    jobMsg.push(jobMsgJson);
+                }
+              var loanMsg = [];
+              var loanLen = $(".block_transaction .loan").length;
+              for(var i=0;i<loanLen;i++){
+                var loanMsgJson = {};
+                $(".block_transaction .loan").eq(i).find("input").each(function(){
+                  loanMsgJson[$(this).attr("name")] = $(this).val();
+                });
+                loanMsg.push(loanMsgJson);
+              }
+              var debitCardMsg =[];
+              var debitCardLen = $(".block_transaction .debit-card").length;
+              for(var j=0;j<debitCardLen;j++){
+                var debitCardMsgJson = {};
+                $(".block_transaction .loan").eq(j).find("input").each(function(){
+                  debitCardMsgJson[$(this).attr("name")] = $(this).val();
+                });
+                debitCardMsg.push(debitCardMsgJson);
+              }
+              var semiCreditCardMsg =[];
+              var semiCreditCardLen = $(".block_transaction .semi-credit-card").length;
+              for(var m=0;m<semiCreditCardLen;m++){
+                var semiCreditCardMsgJson = {};
+                $(".block_transaction .semi-credit-card").eq(m).find("input").each(function(){
+                  semiCreditCardMsgJson[$(this).attr("name")] = $(this).val();
+                });
+                semiCreditCardMsg.push(semiCreditCardMsgJson);
+              }
+              var accumulationMsg = [];
+              var accumulationLen = $(".accumulation-fund-record .accumulation-fund-list").length;
+              for(var i=0;i<accumulationLen;i++){
+                var accumulationMsgJson = {};
+                $(".accumulation-fund-record .accumulation-fund-list").eq(i).find("input").each(function(){
+                  accumulationMsgJson[$(this).attr("name")] = $(this).val();
+                  accumulationMsgJson["INSUREDCOMPANY"] =$(".accumulation-fund-record .accumulation-payment").eq(i).find("input").eq(1).val();
+                  accumulationMsgJson["INFOUPDATEDATE"] =$(".accumulation-fund-record .accumulation-payment").eq(i).find("input").eq(2).val();
+                });
+                accumulationMsg.push(accumulationMsgJson);
+              }
+              var CreditApprovalMsg = [];
+              var CreditApprovalLen = $(".check-detail .check-list").length; 
+              for(var i=0;i<CreditApprovalLen;i++){
+                var CreditApprovalMsgJson = {};
+                $(".block_transaction .loan").eq(i).find("input").each(function(){
+                  CreditApprovalMsgJson[$(this).attr("name")] = $(this).val();
+                });
+                CreditApprovalMsg.push(CreditApprovalMsgJson);
+              }
+                dataJson = {
+                    "Report": {
+                        "REPORTID": $("input[name='REPORTID']").val(),
+                        "REQUESTTIME": $("input[name='REQUESTTIME']").val(),
+                        "REPORTTIME": $("input[name='REPORTTIME']").val(),
+                        "INFORMANTNAME": $("input[name='INFORMANTNAME']").val(),
+                        "CERTIFICATETYPE": $("input[name='CERTIFICATETYPE']").val(),
+                        "CERTIFICATECODE": $("input[name='CERTIFICATECODE']").val(),
+                        "QUERYOPR": $("input[name='QUERYOPR']").val(),
+                        "QUERYCODE": $("input[name='QUERYCODE']").val(),
+                    },
+                    "Person":{
+                        "GENDER":$("input[name='GENDER']").val(),
+                        "GENDERORGPRO":$("input[name='GENDERORGPRO']").val(),
+                        "BIRTHDAY":$("input[name='BIRTHDAY']").val(),
+                        "BIRTHORGPRO":$("input[name='BIRTHORGPRO']").val(),
+                        "MARRIDGE":$("input[name='MARRIDGE']").val(),
+                        "MARRIDGEORGPRO":$("input[name='MARRIDGEORGPRO']").val(),
+                        "MOBILEPHONE":$("input[name='MOBILEPHONE']").val(),
+                        "MOBILORGPRO":$("input[name='MOBILORGPRO']").val(),
+                        "WORKPHONE":$("input[name='WORKPHONE']").val(),
+                        "WORKORGPRO":$("input[name='WORKORGPRO']").val(),
+                        "HOMEPHONE":$("input[name='HOMEPHONE']").val(),
+                        "HOMEORGPRO":$("input[name='HOMEORGPRO']").val(),
+                        "EDUCATION":$("input[name='EDUCATION']").val(),
+                        "EDUORGPRO":$("input[name='EDUORGPRO']").val(),
+                        "DEGREE":$("input[name='DEGREE']").val(),
+                        "DEGREEORGPRO":$("input[name='DEGREEORGPRO']").val(),
+                        "CONTACTADDRESS":$("input[name='CONTACTADDRESS']").val(),
+                        "CONTACTORGPRO":$("input[name='CONTACTORGPRO']").val(),
+                        "HOUSEHOLD":$("input[name='HOUSEHOLD']").val(),
+                        "HOUSEORGPRO":$("input[name='HOUSEORGPRO']").val()
+                    },
+                    "Couple":{
+                        "COUPLENAME":$("input[name='COUPLENAME']").val(),
+                        "COUPLECERTYPE":$("input[name='COUPLECERTYPE']").val(),
+                        "COUPLECERCODE":$("input[name='COUPLECERCODE']").val(),
+                        "COUPLECOMPANY":$("input[name='COUPLECOMPANY']").val(),
+                        "COUPLEPHONE":$("input[name='COUPLEPHONE']").val(),
+                        "ORGINFOPRO":$("input[name='ORGINFOPRO']").val()
+                    },
+                    "Address":liveMsg,
+                    "Profession":jobMsg,
+                    "CreditTips":{
+                      "HOUSELOANNUM":$("input[name='HOUSELOANNUM']").val(),
+                      "OTHERLOANNUM":$("input[name='OTHERLOANNUM']").val(),
+                      "FIRSTLOANMONTHOPEN":$("input[name='FIRSTLOANMONTHOPEN']").val(),
+                      "LOANCARDNUM":$("input[name='LOANCARDNUM']").val(),
+                      "FIRSTLOANCARDMONTHOPEN":$("input[name='FIRSTLOANCARDMONTHOPEN']").val(),
+                      "CREDITCARDNUM":$("input[name='CREDITCARDNUM']").val(),
+                      "FIRSTCREDITCARDMONTHOPEN":$("input[name='FIRSTCREDITCARDMONTHOPEN']").val(),
+                      "STATEMENTNUM":$("input[name='STATEMENTNUM']").val(),
+                      "OBJECTIONNUM":$("input[name='OBJECTIONNUM']").val(),
+                    },
+                    "OverdraftOverdue":{
+                      "LOANPASTDUENUM":$("input[name='LOANPASTDUENUM']").val(),
+                      "LOANPASTDUEMONTH":$("input[name='LOANPASTDUEMONTH']").val(),
+                      "LOANMAXPASTDUEAMOUNT":$("input[name='LOANMAXPASTDUEAMOUNT']").val(),
+                      "LOANLONGESTPASTDUEMONTHS":$("input[name='LOANLONGESTPASTDUEMONTHS']").val(),
+                      "LOANCARDPASTDUENUM":$("input[name='LOANCARDPASTDUENUM']").val(),
+                      "LOANCARDPASTDUEMONTH":$("input[name='LOANCARDPASTDUEMONTH']").val(),
+                      "LOANCARDMAXPASTDUEAMOUNT":$("input[name='LOANCARDMAXPASTDUEAMOUNT']").val(),
+                      "LOANCARDLONGESTPASTDUEMONTHS":$("input[name='LOANCARDLONGESTPASTDUEMONTHS']").val(),
+                      "CREDITCARDPASTDUENUM":$("input[name='CREDITCARDPASTDUENUM']").val(),
+                      "CREDITCARDPASTDUEMONTH":$("input[name='CREDITCARDPASTDUEMONTH']").val(),
+                      "CREDITCARDMAXPASTDUEAMOUNT":$("input[name='CREDITCARDMAXPASTDUEAMOUNT']").val(),
+                      "CREDITCARDLONGESTPASTDUEMONTHS":$("input[name='CREDITCARDLONGESTPASTDUEMONTHS']").val(),
+                    },
+                    "OutstandingLoans":{
+                      "INPAYLOANLEGALORG":$("input[name='INPAYLOANLEGALORG']").val(),
+                      "INPAYLOANORG":$("input[name='INPAYLOANORG']").val(),
+                      "INPAYLOANNUM":$("input[name='INPAYLOANNUM']").val(),
+                      "INPAYLOANTOTALCREDITLIMIT":$("input[name='INPAYLOANTOTALCREDITLIMIT']").val(),
+                      "INPAYLOANTOTALBALANCE":$("input[name='INPAYLOANTOTALBALANCE']").val(),
+                      "INPAYLOANRECENT6AVGPAYAMOUNT":$("input[name='INPAYLOANRECENT6AVGPAYAMOUNT']").val(),
+                    },
+                    "NoPinDebitCards":{
+                      "INPAYLOANCARDLEGALORG":$("input[name='INPAYLOANCARDLEGALORG']").val(),
+                      "INPAYLOANCARDORGNUM":$("input[name='INPAYLOANCARDORGNUM']").val(),
+                      "INPAYLOANCARDNUM":$("input[name='INPAYLOANCARDNUM']").val(),
+                      "INPAYLOANCARDTOTALCREDITLIMIT":$("input[name='INPAYLOANCARDTOTALCREDITLIMIT']").val(),
+                      "INPAYLOANCARDMAXCREDITLIMIT":$("input[name='INPAYLOANCARDMAXCREDITLIMIT']").val(),
+                      "INPAYLOANCARDMINCREDITLIMIT":$("input[name='INPAYLOANCARDMINCREDITLIMIT']").val(),
+                      "INPAYLOANCARDBALANCE":$("input[name='INPAYLOANCARDBALANCE']").val(),
+                      "INPAYLOANCARDRECENT6AVGDEBT":$("input[name='INPAYLOANCARDRECENT6AVGDEBT']").val(),
+                    },
+                    "NoPinAccurateBorrowWriteDownCard":{
+                      "INPAYCREDITCARDLEGALINSTITUTES":$("input[name='INPAYCREDITCARDLEGALINSTITUTES']").val(),
+                      "INPAYCREDITCARDINSTITUTES":$("input[name='INPAYCREDITCARDINSTITUTES']").val(),
+                      "INPAYCREDITCARDNUM":$("input[name='INPAYCREDITCARDNUM']").val(),
+                      "INPAYCREDITCARDTOTALCREDITLIMIT":$("input[name='INPAYCREDITCARDTOTALCREDITLIMIT']").val(),
+                      "INPAYCREDITCARDMAXCREDITLIMIT":$("input[name='INPAYCREDITCARDMAXCREDITLIMIT']").val(),
+                      "INPAYCREDITCARDMINCREDITLIMIT":$("input[name='INPAYCREDITCARDMINCREDITLIMIT']").val(),
+                      "INPAYCREDITCARDBALANCE":$("input[name='INPAYCREDITCARDBALANCE']").val(),
+                      "INPAYCREDITCARDRECENT6AVGDEBT":$("input[name='INPAYCREDITCARDRECENT6AVGDEBT']").val(),
+                    },
+                    "Loan":loanMsg,
+                    "DebitCard":debitCardMsg,
+                    "SemiCreditCard":semiCreditCardMsg,
+                    "HousingProvidentFundPaymentRecord":accumulationMsg,
+                    "QueryRecordSummary":{
+                      "LOANAPPROVAL_ORG":$("input[name='LOANAPPROVAL_ORG']").val(),
+                      "CREDITAPPROVAL_ORG":$("input[name='CREDITAPPROVAL_ORG']").val(),
+                      "LOANAPPROVAL_QUERY":$("input[name='LOANAPPROVAL_QUERY']").val(),
+                      "CREDITAPPROVAL_QUERY":$("input[name='CREDITAPPROVAL_QUERY']").val(),
+                      "PERSONAL_QUERY":$("input[name='PERSONAL_QUERY']").val(),
+                      "LOANMANAGE":$("input[name='LOANMANAGE']").val(),
+                      "GUARANTEEREVIEW":$("input[name='GUARANTEEREVIEW']").val(),
+                      "MERCNAMEREVIEW":$("input[name='MERCNAMEREVIEW']").val(),
+                    },
+                    "CreditApprovalQueryRecordDetail":CreditApprovalMsg
+                }
+              var urlStep = "{% url 'save' %}";
+              $.post(urlStep, {info: JSON.stringify(dataJson)}, function(data) {
+                $(".cont-right").html(data);
+                initHeight();
+              });
+            });
+          
+           /* var stepNum = 1;
+            var urlStep = "{% url 'save' %}";
+            var personId = $("input[name='CERTIFICATECODE']").val();
+            var reportId = $("input[name='REPORTTIME']").val();*/
+           /* $(document).on("click",".cont-right .next-page",function(){
+                if(stepNum == 1){
+                    var dataJson = {};
+                    var liveMsg = [];
+                    var jobMsg = [];
+                    var liveLen = $(".live-msg .edit-live").length;
+                    var jobLen = $(".job-msg .job-place").length;
+                    for(var i=0;i<liveLen;i++){
+                      var liveMsgJson = {};
+                      $(".live-msg .edit-live").eq(i).find("input").each(function(){
+                        liveMsgJson[$(this).attr("name")] = $(this).val();
+                        liveMsgJson["ORGINFOPRO"] =$(".live-msg .live-organization").eq(i).find("input").eq(1).val();
+                      });
+                      liveMsg.push(liveMsgJson);
+                    }
+                    for(var j=0;j<jobLen;j++){
+                        var jobMsgJson = {};
+                        $(".job-msg .job-place").eq(j).find("input").each(function(){
+                          jobMsgJson[$(this).attr("name")] = $(this).val();
+                          jobMsgJson["OCCUPATION"] =$(".job-msg .job-relate").eq(j).find("input").eq(1).val();
+                          jobMsgJson["INDUSTRY"] =$(".job-msg .job-relate").eq(j).find("input").eq(2).val();
+                          jobMsgJson["JOB"] =$(".job-msg .job-relate").eq(j).find("input").eq(3).val();
+                          jobMsgJson["TITLE"] =$(".job-msg .job-relate").eq(j).find("input").eq(4).val();
+                          jobMsgJson["WORKSTARTDATE"] =$(".job-msg .job-relate").eq(j).find("input").eq(5).val();
+                          jobMsgJson["OCCUPATIONUPDATEDATE"] =$(".job-msg .job-relate").eq(j).find("input").eq(6).val();
+                          jobMsgJson["ORGINFOPRO"] =$(".job-msg .job-organization").eq(j).find("input").eq(1).val();
+                        });
+                        jobMsg.push(jobMsgJson);
+                    }
+                    dataJson = {
+                      "Report": {
+                        "REPORTID": $("input[name='REPORTID']").val(),
+                        "REQUESTTIME": $("input[name='REQUESTTIME']").val(),
+                        "REPORTTIME": $("input[name='REPORTTIME']").val(),
+                        "INFORMANTNAME": $("input[name='INFORMANTNAME']").val(),
+                        "CERTIFICATETYPE": $("input[name='CERTIFICATETYPE']").val(),
+                        "CERTIFICATECODE": $("input[name='CERTIFICATECODE']").val(),
+                        "QUERYOPR": $("input[name='QUERYOPR']").val(),
+                        "QUERYCODE": $("input[name='QUERYCODE']").val(),
+                      },
+                      "Person":{
+                        "GENDER":$("input[name='GENDER']").val(),
+                        "GENDERORGPRO":$("input[name='GENDERORGPRO']").val(),
+                        "BIRTHDAY":$("input[name='BIRTHDAY']").val(),
+                        "BIRTHORGPRO":$("input[name='BIRTHORGPRO']").val(),
+                        "MARRIDGE":$("input[name='MARRIDGE']").val(),
+                        "MARRIDGEORGPRO":$("input[name='MARRIDGEORGPRO']").val(),
+                        "MOBILEPHONE":$("input[name='MOBILEPHONE']").val(),
+                        "MOBILORGPRO":$("input[name='MOBILORGPRO']").val(),
+                        "WORKPHONE":$("input[name='WORKPHONE']").val(),
+                        "WORKORGPRO":$("input[name='WORKORGPRO']").val(),
+                        "HOMEPHONE":$("input[name='HOMEPHONE']").val(),
+                        "HOMEORGPRO":$("input[name='HOMEORGPRO']").val(),
+                        "EDUCATION":$("input[name='EDUCATION']").val(),
+                        "EDUORGPRO":$("input[name='EDUORGPRO']").val(),
+                        "DEGREE":$("input[name='DEGREE']").val(),
+                        "DEGREEORGPRO":$("input[name='DEGREEORGPRO']").val(),
+                        "CONTACTADDRESS":$("input[name='CONTACTADDRESS']").val(),
+                        "CONTACTORGPRO":$("input[name='CONTACTORGPRO']").val(),
+                        "HOUSEHOLD":$("input[name='HOUSEHOLD']").val(),
+                        "HOUSEORGPRO":$("input[name='HOUSEORGPRO']").val()
+                      },
+                      "Couple":{
+                        "COUPLENAME":$("input[name='COUPLENAME']").val(),
+                        "COUPLECERTYPE":$("input[name='COUPLECERTYPE']").val(),
+                        "COUPLECERCODE":$("input[name='COUPLECERCODE']").val(),
+                        "COUPLECOMPANY":$("input[name='COUPLECOMPANY']").val(),
+                        "COUPLEPHONE":$("input[name='COUPLEPHONE']").val(),
+                        "ORGINFOPRO":$("input[name='ORGINFOPRO']").val()
+                      },
+                      "Address":liveMsg,
+                      "Profession":jobMsg
+
+                    }
+                  $.post(urlStep, {info: JSON.stringify(dataJson),person_id:personId,report_id:reportId, page_id: 2}, function(data) {
+                    $(".cont-right .process-step").html(data);
+                    initHeight();
+                    stepNum = 2;
+                    $(".cont-right .prev-page").parent().removeClass("disabled");
+                  });
+                }
+                if(stepNum == 2){
+                    var dataJson = {};
+                    $(".message-general tr td input[type='text']").each(function(){
+                        dataJson[$(this).attr("name")]=$(this).val();
+                    });
+                  $.post(urlStep, {info: JSON.stringify(dataJson),person_id:personId,report_id:reportId, page_id: 3}, function(data) {
+                    $(".cont-right .process-step").html(data);
+                    initHeight();
+                    stepNum = 3;
+                  });
+                }
+                if(stepNum == 3){
+                  var dataJson = {};
+                  var loanMsg = [];
+                  var loanLen = $(".block_transaction .loan").length;
+                  for(var i=0;i<loanLen;i++){
+                    var loanMsgJson = {};
+                    $(".block_transaction .loan").eq(i).find("input").each(function(){
+                      loanMsgJson[$(this).attr("name")] = $(this).val();
+                    });
+                    loanMsg.push(loanMsgJson);
+                  }
+                  var debitCardMsg =[];
+                  var debitCardLen = $(".block_transaction .debit-card").length;
+                  for(var j=0;j<debitCardLen;j++){
+                    var debitCardMsgJson = {};
+                    $(".block_transaction .loan").eq(j).find("input").each(function(){
+                      debitCardMsgJson[$(this).attr("name")] = $(this).val();
+                    });
+                    debitCardMsg.push(debitCardMsgJson);
+                  }
+                  var semiCreditCardMsg =[];
+                  var semiCreditCardLen = $(".block_transaction .semi-credit-card").length;
+                  for(var m=0;m<semiCreditCardLen;m++){
+                    var semiCreditCardMsgJson = {};
+                    $(".block_transaction .semi-credit-card").eq(m).find("input").each(function(){
+                      semiCreditCardMsgJson[$(this).attr("name")] = $(this).val();
+                    });
+                    semiCreditCardMsg.push(semiCreditCardMsgJson);
+                  }
+                  dataJson = {"Loan":loanMsg,"DebitCard":debitCardMsg,"SemiCreditCard":semiCreditCardMsg};
+                  $.post(urlStep, {info: JSON.stringify(dataJson),person_id:personId,report_id:reportId, page_id: 4}, function(data) {
+                    $(".cont-right .process-step").html(data);
+                    initHeight();
+                    stepNum = 4;
+                  });
+                }
+                if(stepNum == 4){
+                  var dataJson ={};
+                  var accumulationMsg = [];
+                  var accumulationLen = $(".accumulation-fund-record .accumulation-fund-list").length;
+                  for(var i=0;i<accumulationLen;i++){
+                    var accumulationMsgJson = {};
+                    $(".accumulation-fund-record .accumulation-fund-list").eq(i).find("input").each(function(){
+                      accumulationMsgJson[$(this).attr("name")] = $(this).val();
+                      accumulationMsgJson["INSUREDCOMPANY"] =$(".accumulation-fund-record .accumulation-payment").eq(i).find("input").eq(1).val();
+                      accumulationMsgJson["INFOUPDATEDATE"] =$(".accumulation-fund-record .accumulation-payment").eq(i).find("input").eq(2).val();
+                    });
+                    accumulationMsg.push(accumulationMsgJson);
+                  }
+                  dataJson ={"HousingProvidentFundPaymentRecord":accumulationMsg}
+                  $.post(urlStep, {info: JSON.stringify(dataJson),person_id:personId,report_id:reportId, page_id: 5}, function(data) {
+                      $(".cont-right .process-step").html(data);
+                      initHeight();
+                      stepNum = 5;
+                    });
+                    $(this).parent().addClass("disabled");
+                }
+          
+            });
+            $(document).on("click",".cont-right .prev-page",function(){
+              if(stepNum == 2 ){
+                $.get(urlStep, {person_id:personId,report_id:reportId,page_id: 1}, function(data) {
+                  $(".cont-right .process-step").html(data);
+                  initHeight();
+                  $(this).parent().addClass("disabled");
+                  stepNum = 1;
+                });
+              }else{
+                $(this).parent().removeClass("disabled");
+              }
+              if(stepNum == 3 ){
+                $.get(urlStep, {person_id:personId,report_id:reportId,page_id: 2}, function(data) {
+                  $(".cont-right .process-step").html(data);
+                  initHeight();
+                  stepNum = 2;
+                });
+              }
+              if(stepNum == 4 ){
+                $.get(urlStep, {person_id:personId,report_id:reportId,page_id: 3}, function(data) {
+                  $(".cont-right .process-step").html(data);
+                  initHeight();
+                  stepNum = 3;
+                });
+              }
+              if(stepNum == 5 ){
+                $.get(urlStep, {person_id:personId,report_id:reportId,page_id: 4}, function(data) {
+                  $(".cont-right .process-step").html(data);
+                  initHeight();
+                  stepNum = 4;
+                });
+              }
+            });*/
+            $(document).on("click",".cont-right .back-step",function(){
+                $.get("",{}, function(data) {
+                  $(".nav-left .main-menu").removeClass("active");
+                  $(".nav-left .main-menu").eq(1).addClass("active");
+                  $(".nav-left .collapsed").stop().slideUp();
+                  $(".nav-left .main-menu").eq(1).next(".collapsed").stop().slideDown();
+                  $(".nav-left .main-menu").eq(1).next(".collapsed").find("li").eq(0).addClass("on");
+                  $(".cont-right").html(data);
+                  initHeight();
+                });
+            });
+            $(document).on("click",".cont-right .next-step",function(){
+                $.get("",{}, function(data) {
+                  $(".nav-left .main-menu").removeClass("active");
+                  $(".nav-left .main-menu").eq(2).addClass("active");
+                  $(".nav-left .collapsed").stop().slideUp();
+                  $(".nav-left .main-menu").eq(2).next(".collapsed").stop().slideDown();
+                  $(".collapsed li").removeClass("on");
+                  $(".nav-left .main-menu").eq(2).next(".collapsed").find("li").eq(0).addClass("on");
+                  $(".cont-right").html(data);
+                  initHeight();
+                });
+            });
+        });
+    })();
+</script>
+{% endblock %}
+

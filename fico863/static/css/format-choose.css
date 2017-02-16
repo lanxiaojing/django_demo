@@ -1,0 +1,13 @@
+.format-choose {width:70%;margin:43px 25px;float: right;}
+.format-choose .panel-body {width:100%;background-color: #e9e9e9;}
+.format-choose .choose-left {float:left;width:70%;}
+.format-choose .choose-left input {display:inline-block;}
+.format-choose .choose-left p{margin-top: 20px;}
+.format-choose .choose-title {float:left;padding:8px 10px;vertical-align:middle;}
+.format-choose .choose-left .format-path {width:60%;float:left;margin-right: 40px;}
+.format-choose .choose-left .input-path {background:#337ab7;color:#fff;font-size:14px;}
+.format-choose .choose-left .input-path input {display:none;}
+.format-choose .choose-left .format-path .input-group-btn{left: 20px;}
+.format-choose .choose-right {float:right;width:30%;background-color: #fff;margin:-15px -15px -26px 0;padding: 15px 15px 26px 0;}
+.format-choose .choose-right a {display:block;text-align:center;padding:5px 0;}
+.format-choose .choose-right a .btn {width:40%;}

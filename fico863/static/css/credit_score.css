@@ -1,0 +1,7 @@
+* {margin:0;padding:0;}
+.credit_score{float:left;padding: 30px 0 0 15px;}
+.credit_score table tr td {border:1px solid #ccc;text-indent: 15px;}
+.credit_score .user{font-size: 18px;height:45px;}
+.credit_score table tr td h3{font-size: 16px;color:#fff;background-color: #434343;height:43px;line-height: 43px;font-family: "Microsoft YaHei";margin:0;}
+.credit_score  .indicatorContainer1, .indicatorContainer2 ,.indicatorContainer3{width:230px;height:200px;border:1px solid #ccc;padding:45px;}
+.credit_score table tr td p{font-size: 18px;line-height:45px;text-align: right;color:#0169a3;margin-right:20px;height:45px;}

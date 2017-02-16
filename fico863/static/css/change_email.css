@@ -1,0 +1,7 @@
+.email_box{width:75%;padding-left: 3%;float:left;}
+.email_box .change_email{border: 1px solid #ccc;width:570px;height:360px; margin-top: 50px;border-radius: 5px;padding: 0px;}
+.email_box .change_email .email_nav{height: 37px;background-color: #323232;color:#fff;line-height: 37px;font-size:16px;padding-left: 16px;border-radius: 5px;}
+.email_box .change_email form{width:380px;height:180px;margin:auto auto;margin-top: 40px;font-size: 16px;font-weight: 900;}
+.email_box .change_email form button{padding: 8px 20px;margin-top: 15px;letter-spacing: 2px;}
+.email_box .change_email form span{letter-spacing: 2px;padding-right:0px;}
+.email_box .change_email form .form-group{margin-top: 0px;}

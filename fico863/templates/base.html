@@ -1,0 +1,131 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- site check -->
+
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'js/radialIndicator.js' %}"></script>
+    <!-- responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}" />
+    <link href="{% static 'bootstrap33/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap33/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/common.css' %}" rel="stylesheet">
+    <link href="{% static 'css/report.css' %}" rel="stylesheet">
+    <link href="{% static 'css/loan_option.css' %}" rel="stylesheet">
+    <link href="{% static 'css/credit_score.css' %}" rel="stylesheet">
+    <link href="{% static 'css/change_email.css' %}" rel="stylesheet">
+    <link href="{% static 'css/user_login.css' %}" rel="stylesheet">
+    <link href="{% static 'css/account_center.css' %}" rel="stylesheet">
+    <link href="{% static 'css/find_password.css' %}" rel="stylesheet">
+    <link href="{% static 'css/query_history.css' %}" rel="stylesheet">
+    <link href="{% static 'css/format-choose.css' %}" rel="stylesheet">
+    <script src="{% static 'bootstrap33/js/bootstrap.min.js' %}"></script>
+
+    <!-- end responsive design -->
+
+    <link href="{% static 'css/jumbotron-narrow.css' %}" rel="stylesheet" media="screen">
+    <title>{% block head_title %}PRI{% endblock %}</title>
+  </head>
+
+  <body>
+    <div class="clearfix text-left wrap">
+      <nav>
+        <a href="{% url 'index' %}"><img src="{% static 'image/logo==.png' %}"></a>
+        <div class="company-name">
+        <img class="navP" src="{% static 'image/logop.png' %}">
+        </div>
+        
+      </nav>
+    </div>
+
+    {% block indexstart %}
+    <div class="container wrap clearfix">
+    {% endblock %}
+
+    {% block sidebar %}
+      <div class="nav-left">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation">
+            <a href="{% url 'index' %}" class="main-menu active">首页</a>
+          </li>
+          <li role="presentation">
+            <a href="#" class="main-menu">报告上传</a>
+            <ul class="collapsed">
+              <li><a href="{% url 'upload' %}">格式选择</a></li>
+              <li class=""><a href="{% url 'preview' %}">报告预览</a></li>
+            </ul>
+          </li>
+          <li role="presentation">
+            <a href="#" class="main-menu">信用评分</a>
+            <ul class="collapsed">
+
+              <li><a href="{% url 'loan_option' %}">贷款选择</a></li>
+
+              <li><a href="{% url 'credit_score' %}">信用分数</a></li>
+            </ul>
+          </li>
+          <li role="presentation">
+            <a href="#" class="main-menu">账户中心</a>
+            <ul class="collapsed">
+              <li><a href="{% url 'query_history' %}">查询历史</a></li>
+              <li><a href="{% url 'account_password' %}">密码修改</a></li>
+              <li><a href="#">邮箱修改</a></li>
+              {% if user.is_authenticated %}
+              <li><a href="{% url 'account_logout' %}">退出登录</a></li>
+              {% endif %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+      {% endblock %}
+
+    {% block content %}{% endblock %}
+
+
+    {% block indexend %}
+    </div>
+    {% endblock %}
+
+    {% block foot %}
+    <footer class="footer text-center wrap" >
+      <p>COPYRIGHT &copy; 2015 PRINCETECHS LLC 普林科技</p>
+      <p>备案号：京ICP备14044447号-3</p>
+    </footer>
+    {% endblock %}
+  </body>
+  <script>
+    (function(){
+      $(document).ready(function(){
+        $(document).on("click",".nav-left .main-menu",function(){
+          if(!$(this).hasClass("active")){
+            $(".nav-left .main-menu").removeClass("active");
+            $(this).addClass("active");
+            $(".nav-left .collapsed").stop().slideUp();
+            $(this).next(".collapsed").stop().slideDown();
+          }else{
+            $(".nav-left .main-menu").removeClass("active");
+            $(this).removeClass("active");
+            $(this).next(".collapsed").stop().slideUp();
+          }
+        });
+        $(document).on("mouseenter",".collapsed li",function(){
+          $(".collapsed li").removeClass("active");
+          $(this).addClass("active");
+        }).on("mouseleave",".collapsed li",function(){
+          $(this).removeClass("active");
+        });
+        $(document).on("click",".collapsed li",function(){
+          $(".collapsed li").removeClass("on");
+          $(this).addClass("on");
+        });
+      });
+    })();
+  </script>
+</html>

@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static %}
+{% block sidebar %}{% endblock %}
+{% block content%}
+    <div class="block_report">
+        <div class="personal-msg">
+            <h3>个人基本信息<span>——</span><span class="name">{{ person.NAME }}</span></h3>
+           <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>性别：</td>
+                        <td>{{ person.GENDER }}</td>
+                        <td>手机号：</td>
+                        <td>{{ person.MOBILEPHONE }}</td>
+                    </tr>
+                    <tr>
+                        <td>学历：</td>
+                        <td>{{ person.EDUCATION }}</td>
+                        <td>出身日期：</td>
+                        <td>{{ person.BIRTHDAY }}</td>
+                    </tr>
+                    <tr>
+                        <td>学位：</td>
+                        <td>{{ person.DEGREE }}</td>
+                        <td>单位电话：</td>
+                        <td>{{ person.WORKPHONE }}</td>
+                    </tr>
+                    <tr>
+                        <td>婚姻状况：</td>
+                        <td>{{ person.MARRIDGE }}</td>
+                        <td>住宅电话：</td>
+                        <td>{{ person.HOMEPHONE }}</td>
+                    </tr>
+                    <tr>
+                        <td>通讯地址：</td>
+                        <td colspan="3">{{ person.CONTACTADDRESS }}</td>
+                    </tr>
+                    <tr>
+                        <td>户籍地址：</td>
+                        <td colspan="3">{{ person.HOUSEHOLD }}</td>
+                    </tr>
+                </table>
+           </div>
+        </div>
+        <div class="credit-survey">
+            <h3>信用概况</h3>
+            <div class="credit-detail clearfix">
+                <div class="text-left score">
+                  <span>{{ front_report.score|floatformat }}</span><span>•</span><span>{{ front_report.score_zh }}</span>
+                </div>
+                <div class="text-right describe">
+                  申请人击败了全国<span>{{ front_report.rank|floatformat:3 }}%</span><span>个人住房</span>贷款用户
+                </div>
+            </div>
+        </div>
+        <div class="credit-risk">
+            <h3>信用风险</h3>
+            <p class="text-left">信用人信用风险为<span>{{ front_report.ratio|floatformat:3 }}</span>。</p>
+        </div>
+        <div class="score-unscramble">
+            <h3>评分解读</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>申请人各维度的得分为：</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="clearfix classify">
+                                <label>信用额度：</label>
+                                <div class="progress-show">
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ front_report.creditlimit_pct }};">
+                                            <span class="sr-only">60%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix classify">
+                                <label>近期行为：</label>
+                                <div class="progress-show">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ front_report.recentbehavior_pct }};">
+                                            <span class="sr-only">60%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix classify">
+                                <label>信用时长：</label>
+                                <div class="progress-show">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ front_report.creditlength_pct }};">
+                                            <span class="sr-only">60%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix classify">
+                                <label>账户数量：</label>
+                                <div class="progress-show">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ front_report.accountno_pct }};">
+                                            <span class="sr-only">60%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix classify">
+                                <label>还款历史：</label>
+                                <div class="progress-show">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ front_report.credithistory_pct }};">
+                                            <span class="sr-only">60%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                       <td>
+                           影响申请人的主要指标为：
+                       </td>
+                    </tr>
+                    <tr>
+                        <td class="kpi">
+                          1. {{ front_report.fea_imp_first }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="kpi">
+                            2. {{ front_report.fea_imp_sec }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="kpi">
+                            3. {{ front_report.fea_imp_third }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

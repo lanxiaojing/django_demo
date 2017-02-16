@@ -1,0 +1,21 @@
+* {margin:0;padding:0;list-style:none;}
+.block_transaction {float:left;width:75%;padding-left:2%;}
+.block_transaction .title h3 {height:85px;line-height:85px;text-align:center;color:#323232;font-size:20px;font-weight:bold;}
+.block_transaction table {border-bottom:1px solid #ccc;position:relative;}
+.block_transaction table .function-close {position:absolute;right:2px;top:0px;cursor:pointer;}
+.block_transaction table tr {font-size:14px;}
+.block_transaction table tr:first-child td {padding-right:18px;}
+.block_transaction .title-use h4 {height:36px;line-height:36px;text-align:center;font-size:16px;font-weight:600;border-bottom:2px solid #888;margin:0;}
+.block_transaction table tr td {text-align:center;border-right:1px solid #ccc;}
+.block_transaction table tr td:last-child {border-right:none;}
+.block_transaction table tr:nth-child(1) td {text-align:left;}
+.block_transaction table .account-status {white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.block_transaction table tr:nth-child(3) td,.block_transaction table tr:nth-child(5) td {color:#31b0d5;}
+.block_transaction .table-detail {border:1px solid #ccc;border-bottom:none;}
+.block_transaction .table-detail table:last-child {margin-bottom:0;}
+.block_transaction .pager {margin:12px 0;padding:20px 0;}
+.block_transaction .pager li a {border:none;color:#888;font-size:12px;}
+.block_transaction .pager .current-page {color:#31b0d5;}
+.block_transaction  .operate {text-align:center;}
+.block_transaction  .operate button {width:110px;height:40px;margin-right:50px;padding:10px 0px;font-size:16px;font-weight:bold;border:none;}
+.block_transaction .add-btn {text-align:center;padding:10px 0;}

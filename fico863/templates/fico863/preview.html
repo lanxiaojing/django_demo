@@ -1,0 +1,647 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content%}
+<div class="cont-right">
+  <div class="preview">
+    <div class="process-step">
+      <div class="personal-report table-report active">
+        <div class="title">
+          <h3>个人信用报告</h3>
+          <h5>(明细)</h5>
+        </div>
+        <div class="table-responsive table-detail personal-credit-report">
+          <table class="table table-hover table-bordered">
+            <tr>
+              <td>报告编号:</td>
+              <td colspan="4">{{ Report.REPORTID }}</td>
+            </tr>
+            <tr>
+              <td>查询请求时间</td>
+              <td colspan="4">{{ Report.REQUESTTIME }}</td>
+            </tr>
+            <tr>
+              <td>报告时间</td>
+              <td colspan="4">{{ Report.REPORTTIME }}</td>
+            </tr>
+            <tr>
+              <th>被查询者姓名</th>
+              <th>被查询者证件类型</th>
+              <th>被查询者证件号码</th>
+              <th>查询操作员</th>
+              <th>查询原因</th>
+            </tr>
+            <tr>
+              <td>{{ Report.INFORMANTNAME }}</td>
+              <td>{{ Report.CERTIFICATETYPE }}</td>
+              <td>{{ Report.CERTIFICATECODE }}</td>
+              <td>{{ Report.QUERYOPR }}</td>
+              <td>{{ Report.QUERYCODE }}</td>
+            </tr>
+          </table>
+        </div>
+        <!--step1-->
+        <div class="basic-message active">
+          <div class="title">
+            <h3>一、个人基本信息</h3>
+          </div>
+          <div class="table-responsive table-detail">
+            <table class="table table-hover table-bordered">
+              <tr class="person" ><th colspan="4">身份信息</th></tr>
+              <tr>
+                <th>性别</th>
+                <th>出生日期</th>
+                <th>婚姻状况</th>
+                <th>手机号码</th>
+              </tr>
+              <tr>
+                <td>{{ Person.GENDER }}</td>
+                <td>{{ Person.BIRTHDAY }}</td>
+                <td>{{ Person.MARRIDGE }}</td>
+                <td>{{ Person.MOBILEPHONE }}</td>
+              </tr>
+              <tr>
+                <th>数据发生机构名称</th>
+                <th>数据发生机构名称</th>
+                <th>数据发生机构名称</th>
+                <th>数据发生机构名称</th>
+              </tr>
+              <tr>
+                <td>{{ Person.GENDERORGPRO }}</td>
+                <td>{{ Person.BIRTHORGPRO }}</td>
+                <td>{{ Person.MARRIDGEORGPRO }}</td>
+                <td>{{ Person.MOBILORGPRO }}</td>
+              </tr>
+              <tr>
+                <th>单位电话</th>
+                <th>住宅电话</th>
+                <th>学历</th>
+                <th>学位</th>
+              </tr>
+              <tr>
+                <td>{{ Person.WORKPHONE }}</td>
+                <td>{{ Person.HOMEPHONE }}</td>
+                <td>{{ Person.EDUCATION }}</td>
+                <td>{{ Person.DEGREE }}</td>
+              </tr>
+              <tr>
+                <th>数据发生机构名称</th>
+                <th>数据发生机构名称</th>
+                <th>数据发生机构名称</th>
+                <th>数据发生机构名称</th>
+              </tr>
+              <tr>
+                <td>{{ Person.WORKORGPRO }}</td>
+                <td>{{ Person.HOMEORGPRO }}</td>
+                <td>{{ Person.EDUORGPRO }}</td>
+                <td>{{ Person.DEGREEORGPRO }}</td>
+              </tr>
+              <tr>
+                <th colspan="2">通讯地址</th>
+                <th colspan="2">户籍地址</th>
+              </tr>
+              <tr>
+                <td colspan="2">{{ Person.CONTACTADDRESS }}</td>
+                <td colspan="2">{{ Person.HOUSEHOLD }}</td>
+              </tr>
+              <tr>
+                <th colspan="2">数据发生机构名称</th>
+                <th colspan="2">数据发生机构名称</th>
+              </tr>
+              <tr>
+                <td colspan="2">{{ Person.CONTACTORGPRO }}</td>
+                <td colspan="2">{{ Person.HOUSEORGPRO }}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="table-responsive table-detail">
+            <table class="table table-hover table-bordered">
+              <tr><th colspan="5">配偶信息</th></tr>
+              <tr>
+                <th>姓名</th>
+                <th>证件类型</th>
+                <th>证件号码</th>
+                <th>工作单位</th>
+                <th>联系电话</th>
+              </tr>
+              <tr>
+                <td>{{ Couple.COUPLENAME }}</td>
+                <td>{{ Couple.COUPLECERTYPE }}</td>
+                <td>{{ Couple.COUPLECERCODE }}</td>
+                <td>{{ Couple.COUPLECOMPANY }}</td>
+                <td>{{ Couple.COUPLEPHONE }}</td>
+              </tr>
+              <tr>
+                <th colspan="5">数据发生机构名称</th>
+              </tr>
+              <tr>
+                <td colspan="5">{{ Couple.ORGINFOPRO }}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="table-responsive table-detail live-msg">
+            <table class="table table-hover table-bordered">
+              <tr><th colspan="4">居住信息</th></tr>
+              <tr class="edit-title">
+                <th>编号</th>
+                <th>居住地址</th>
+                <th>居住状况</th>
+                <th>信息更新日期</th>
+              </tr>
+              {% for item in Address %}
+              <tr class="edit-live" >
+                <td></td>
+                <td>{{ item.ADDRESS }}</td>
+                <td>{{ item.LIVINGSTATUS }}</td>
+                <td>{{ item.LIVEINFOUPDATEDATE }}</td>
+              </tr>
+              {% endfor %}
+              <tr class="edit-title">
+                <th>编号</th>
+                <th colspan="3">数据发生机构名称</th>
+              </tr>
+              {% for item in Address %}
+              <tr class="live-organization">
+                <td></td>                 
+                <td colspan="3">{{ item. }}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+          <div class="table-responsive table-detail job-msg">
+            <table class="table table-hover table-bordered">
+              <tr><th colspan="7">职业信息</th></tr>
+              <tr class="edit-title">
+                <th>编号</th>
+                <th colspan="3">工作单位</th>
+                <th colspan="3">单位地址</th>
+              </tr>
+              {% for item in Profession %}
+              <tr class="job-place">
+                <td></td>
+                <td colspan="3">{{ item.COMPANY }}</td>
+                <td colspan="3">{{ item.COMPANYADDRESS }}</td>
+              </tr>
+              {% endfor %}
+              <tr class="edit-title">
+                <th>编号</th>
+                <th>职业</th>
+                <th>行业</th>
+                <th>职务</th>
+                <th>职称</th>
+                <th>进入本单位年份</th>
+                <th>信息更新日期</th>
+              </tr>
+              {% for item in Profession %}
+              <tr class="job-relate">
+                <td></td>
+                <td>{{ item.OCCUPATION }}</td>
+                <td>{{ item.INDUSTRY }}</td>
+                <td>{{ item.JOB }}</td>
+                <td>{{ item.TITLE }}</td>
+                <td>{{ item.WORKSTARTDATE }}</td>
+                <td>{{ item.OCCUPATIONUPDATEDATE }}</td>
+              </tr>
+               {% endfor %}
+              <tr class="edit-title">
+                <th>编号</th>
+                <th colspan="6">数据发生机构名称</th>
+              </tr>
+              {% for item in Profession %}
+              <tr class="job-organization" >
+                <td></td>
+                <td colspan="6">{{ item. }}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="message-general table-report">
+        <div class="title">
+          <h3>二、信息概要</h3>
+        </div>
+        <div class="table-responsive table-detail">
+          <table class="table table-hover table-bordered">
+            <tr><th colspan="10">信用提示</th></tr>
+            <tr>
+              <th>个人住房贷款笔数</th>
+              <th>个人商用房（包括商住两用）贷款笔数</th>
+              <th>其他贷款笔数</th>
+              <th>首笔贷款发放月份</th>
+              <th>贷记卡账户数</th>
+              <th>首张贷记卡发卡月份</th>
+              <th>准贷记卡账户数</th>
+              <th>首张准贷记卡发卡月份</th>
+              <th>本人声明数目</th>
+              <th>异议标注数目</th>
+            </tr>
+            <tr>
+              <td>{{ CreditTips.HOUSELOANNUM }}</td>
+              <td></td>
+              <td>{{ CreditTips.OTHERLOANNUM }}</td>
+              <td>{{ CreditTips.FIRSTLOANMONTHOPEN }}</td>
+              <td>{{ CreditTips.LOANCARDNUM }}</td>
+              <td>{{ CreditTips.FIRSTLOANCARDMONTHOPEN }}</td>
+              <td>{{ CreditTips.CREDITCARDNUM }}</td>
+              <td>{{ CreditTips.FIRSTCREDITCARDMONTHOPEN }}</td>
+              <td>{{ CreditTips.STATEMENTNUM }}</td>
+              <td>{{ CreditTips.OBJECTIONNUM }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive table-detail">
+          <table class="table table-hover table-bordered">
+            <tr><th colspan="12">逾期及违约信息概要</th></tr>
+            <tr>
+              <th colspan="12">逾期（透支）信息汇总</th>
+            </tr>
+            <tr>
+              <th colspan="4">贷款逾期</th>
+              <th colspan="4">贷记卡逾期</th>
+              <th colspan="4">准贷记卡60天以上透支</th>
+            </tr>
+            <tr>
+              <th>笔数</th>
+              <th>月份数</th>
+              <th>单月最高逾期总额</th>
+              <th>最长逾期月数</th>
+              <th>账户数</th>
+              <th>月份数</th>
+              <th>单月最高逾期总额</th>
+              <th>最长逾期月数</th>
+              <th>账户数</th>
+              <th>月份数</th>
+              <th>单月最高透支总额</th>
+              <th>最长透支月数</th>
+            </tr>
+            <tr>
+              <td>{{ OverdraftOverdue.LOANPASTDUENUM }}</td>
+              <td>{{ OverdraftOverdue.LOANPASTDUEMONTH }}</td>
+              <td>{{ OverdraftOverdue.LOANMAXPASTDUEAMOUNT }}</td>
+              <td>{{ OverdraftOverdue.LOANLONGESTPASTDUEMONTHS }}</td>
+              <td>{{ OverdraftOverdue.LOANCARDPASTDUENUM }}</td>
+              <td>{{ OverdraftOverdue.LOANCARDPASTDUEMONTH }}</td>
+              <td>{{ OverdraftOverdue.LOANCARDMAXPASTDUEAMOUNT }}</td>
+              <td>{{ OverdraftOverdue.LOANCARDLONGESTPASTDUEMONTHS }}</td>
+              <td>{{ OverdraftOverdue.CREDITCARDPASTDUENUM }}</td>
+              <td>{{ OverdraftOverdue.CREDITCARDPASTDUEMONTH }}</td>
+              <td>{{ OverdraftOverdue.CREDITCARDMAXPASTDUEAMOUNT }}</td>
+              <td>{{ OverdraftOverdue.CREDITCARDLONGESTPASTDUEMONTHS }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive table-detail">
+          <table class="table table-hover table-bordered">
+            <tr><th colspan="8">授信及负债信息概要</th></tr>
+            <tr>
+              <th colspan="8">未结清贷款信息汇总</th>
+            </tr>
+            <tr>
+              <th colspan="3">贷款法人机构数</th>
+              <th>贷款机构数</th>
+              <th>笔数</th>
+              <th>合同总额</th>
+              <th>余额</th>
+              <th>最近6个月平均应还款</th>
+            </tr>
+            <tr>
+              <td colspan="3">{{ OutstandingLoans.INPAYLOANLEGALORG }}</td>
+              <td>{{ OutstandingLoans.INPAYLOANORG }}</td>
+              <td>{{ OutstandingLoans.INPAYLOANNUM }}</td>
+              <td>{{ OutstandingLoans.INPAYLOANTOTALCREDITLIMIT }}</td>
+              <td>{{ OutstandingLoans.INPAYLOANTOTALBALANCE }}</td>
+              <td>{{ OutstandingLoans.INPAYLOANRECENT6AVGPAYAMOUNT }}</td>
+            </tr>
+            <tr>
+              <th colspan="8">未销户贷记卡信息汇总</th>
+            </tr>
+            <tr>
+              <th>发卡法人机构数</th>
+              <th>发卡机构数</th>
+              <th>账户数</th>
+              <th>授信总额</th>
+              <th>单家行最高授信额</th>
+              <th>单家行最低授信额</th>
+              <th>已用额度</th>
+              <th>最近6个月平均使用额度</th>
+            </tr>
+            <tr>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDLEGALINSTITUTES }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDINSTITUTES }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDNUM }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDTOTALCREDITLIMIT }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDMAXCREDITLIMIT }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDMINCREDITLIMIT }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDBALANCE }}</td>
+              <td>{{ NoPinDebitCards.INPAYCREDITCARDRECENT6AVGDEBT }}</td>
+            </tr>
+            <tr>
+              <th colspan="8">未销户准贷记卡信息汇总</th>
+            </tr>
+            <tr>
+              <th>发卡法人机构数</th>
+              <th>发卡机构数</th>
+              <th>账户数</th>
+              <th>授信总额</th>
+              <th>单家行最高授信额</th>
+              <th>单家行最低授信额</th>
+              <th>透支余额</th>
+              <th>最近6个月平均使用额度</th>
+            </tr>
+            <tr>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDLEGALINSTITUTES }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDINSTITUTES }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDNUM }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDTOTALCREDITLIMIT }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDMAXCREDITLIMIT }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDMINCREDITLIMIT }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDBALANCE }}</td>
+              <td>{{ NoPinAccurateBorrowWriteDownCard.INPAYCREDITCARDRECENT6AVGDEBT }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="block_transaction table-report">
+        <div class="title">
+          <h3>三、信贷交易信息明细</h3>
+        </div>
+        <div class="table-responsive table-detail">
+          <div class="title-use">
+            <h4>贷款</h4>
+          </div>
+          {% for item in Loan %}
+          <table class="table table-hover loan">
+            <tr>
+              <td colspan="7">1.2012年1月1日"机构“GK”发放的200，000元人民币个人经营性贷款,业务号123,"信用/免担保","7期","按月归还",2015年01月06日到期，截至2014年09月21日。</td>
+            </tr>
+            <tr class="account-status">
+              <th>五级分类</th>
+              <th>本金金额</th>
+              <th>剩余还款期数</th>
+              <th>本月应还款</th>
+              <th>应还款日</th>
+              <th>本月实还款</th>
+              <th>最近一次还款日期</th>
+            </tr>
+            <tr>
+              <td>{{ item.CLASS5STAT }}</td>
+              <td>{{ item.BALANCE }}</td>
+              <td>{{ item.MONTHUNPAID }}</td>
+              <td>{{ item.SCHEDUALEDAMOUNT }}</td>
+              <td>{{ item.BILLINGDATE }}</td>
+              <td>{{ item.ACTUALPAYAMOUNT }}</td>
+              <td>{{ item.RECENTPAYDATE }}</td>
+            </tr>
+            <tr>
+              <th colspan="2">当前逾期期数</th>
+              <th>当前逾期金额</th>
+              <th>逾期31-60天未还本金</th>
+              <th>逾期61-90天未还本金</th>
+              <th>逾期91-180天未还本金</th>
+              <th>逾期180天未还本金</th>
+            </tr>
+            <tr>
+              <td colspan="2">{{ item.CURTERMPASTDUE }}</td>
+              <td>{{ item.CURAMOUNTPASTDUE }}</td>
+              <td>{{ item.AMOUNTPASTDUE30 }}</td>
+              <td>{{ item.AMOUNTPASTDUE60 }}</td>
+              <td>{{ item.AMOUNTPASTDUE90 }}</td>
+              <td>{{ item.AMOUNTPASTDUE180 }}</td>
+            </tr>
+            <tr>
+              <th colspan="7">过去24月还款情况</th>
+            </tr>
+            <tr>
+              <td colspan="7">{{ item.PAYSTAT24MONTH }}</td>
+            </tr>
+          </table>
+          {% endfor %}
+        </div>
+        <div class="table-responsive table-detail">
+          <div class="title-use">
+            <h4>贷记卡</h4>
+          </div>
+          {% for item in DebitCard %}
+          <table class="table table-hover debit-card">
+            <tr>
+              <td colspan="5">{{ item.DATEOPENED }}机构{{ item.FINANCENAME }}发放的贷记卡{{ item.CURRENCYNAME }},业务号{{ item. }},授信额度{{ item.CREDITLIMIT }}元,{{ item.GUARANTEEWAYNAME }},截至{{ item.STATENDDATE }}.</td> 
+            </tr>
+            <tr class="account-status">
+              <th>共享额度</th>
+              <th>已用额度</th>
+              <th>最近6个月平均使用额度</th>
+              <th>最大使用额度</th>
+              <th>本月应还款</th>
+            </tr>
+            <tr>
+              <td>{{ item.SHAREAMOUNT }}</td>
+              <td>{{ item.BALANCE }}</td>
+              <td>{{ item.AVG6AMOUNT }}</td>
+              <td>{{ item.MAXDEBT }}</td>
+              <td>{{ item.SCHEDUALEDAMOUNT }}</td>
+            </tr>
+            <tr>
+              <th>账单日</th>
+              <th>本月实还款</th>
+              <th>最近一次还款日期</th>
+              <th>当前逾期期数</th>
+              <th>当前逾期金额</th>
+            </tr>
+            <tr>
+              <td>{{ item.ACCOUNTDATE }}</td>
+              <td>{{ item.ACTUALPAYAMOUNT }}</td>
+              <td>{{ item.RECENTPAYDATE }}</td>
+              <td>{{ item.CURTERMPASTDUE }}</td>
+              <td>{{ item.CURAMOUNTPASTDUE }}</td>
+            </tr>
+            <tr>
+              <th colspan="5">过去24月还款情况</th>
+            </tr>
+            <tr>
+              <td colspan="5">{{ item.PAYSTAT24MONTH }}</td>
+            </tr>
+          </table>
+          {% endfor %}
+        </div>
+        <div class="table-responsive table-detail">
+          <div class="title-use">
+            <h4>准贷记卡</h4>
+          </div>
+          {% for item in SemiCreditCard %}
+          <table class="table table-hover semi-credit-card">
+            <tr>
+              <td colspan="8">{{ item.DATEOPENED }}机构{{ item.FINANCENAME }}发放的准贷记卡{{ item.CURRENCYNAME }},业务号{{ item. }},授信额度{{ item.CREDITLIMIT }}元,{{ item.GUARANTEEWAYNAME }},截至{{ item.STATENDDATE }}.</td>
+            </tr>
+            <tr class="account-status">
+              <th>共享额度</th>
+              <th>透支额度</th>
+              <th>最近6个月平均透支余额</th>
+              <th>最大透支余额</th>
+              <th>账单日</th>
+              <th>本月实还款</th>
+              <th>最近一次还款日期</th>
+              <th>透支180天以上未付余额</th>
+            </tr>
+            <tr>
+              <td>{{ item.SHAREAMOUNT }}</td>
+              <td>{{ item.BALANCE }}</td>
+              <td>{{ item.AVG6AMOUNT }}</td>
+              <td>{{ item.MAXDEBT }}</td>
+              <td>{{ item.ACCOUNTDATE }}</td>
+              <td>{{ item.ACTUALPAYAMOUNT }}</td>
+              <td>{{ item.RECENTPAYDATE }}</td>
+              <td>{{ item.UNPAID180 }}</td>
+            </tr>
+            <tr>
+              <th colspan="8">过去24月还款情况</th>
+            </tr>
+            <tr>
+              <td colspan="8">{{ item.PAYSTAT24MONTH }}</td>
+            </tr>
+          </table>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="message-detail table-report">
+        <div class="title">
+          <h3>四、公共信息明细</h3>
+        </div>
+        <div class="table-responsive table-detail accumulation-fund-record">
+          <table class="table table-hover table-bordered">
+            <tr><th colspan="9">住房公积金参缴记录</th></tr>
+            <tr class="edit-title">
+              <th>编号</th>
+              <th>参缴地</th>
+              <th>参缴日期</th>
+              <th>初缴月份</th>
+              <th>缴至月份</th>
+              <th>缴费状态</th>
+              <th>月缴存额</th>
+              <th>个人缴存比例</th>
+              <th>单位缴存比例</th>
+            </tr>
+            {% for item in HousingProvidentFundPaymentRecord %}
+            <tr class="accumulation-fund-list">
+              <td></td>   {# bianhao? #}
+              <td>{{ item.PAYPLACE }}</td>
+              <td>{{ item.PAYDATE }}</td>
+              <td>{{ item.FIRSTPAYDATE }}</td>
+              <td>{{ item.PAYENDDATE }}</td>
+              <td>{{ item.PAYSTATUS }}</td>
+              <td>{{ item.MONTHPAYMENT }}</td>
+              <td>{{ item.PERSONPAYRATIO }}</td>
+              <td>{{ item.COMPANYPAYRATIO }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="edit-title">
+              <th>编号</th>
+              <th colspan="7">缴费单位</th>
+              <th>信息更新日期</th>
+            </tr>
+            {% for item in HousingProvidentFundPaymentRecord %}
+            <tr class="accumulation-payment">
+              <td>{{ item. }}</td>     {# bianhao #}
+              <td>{{ item.INSUREDCOMPANY }}</td>
+              <td colspan="7">{{ item.INFOUPDATEDATE }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      <div class="check-record table-report">
+        <div class="title">
+          <h3>五、查询记录</h3>
+        </div>
+        <div class="table-responsive table-detail record-summary">
+          <table class="table table-hover table-bordered">
+            <tr><th colspan="8">查询记录汇总</th></tr>
+            <tr>
+              <th colspan="2">最近1个月内的查询机构数</th>
+              <th colspan="3">最近1个月内的查询次数</th>
+              <th colspan="3">最近2年内的查询次数</th>
+            </tr>
+            <tr>
+              <th>贷款审批</th>
+              <th>信用卡审批</th>
+              <th>贷款审批</th>
+              <th>信用卡审批</th>
+              <th>本人查询</th>
+              <th>贷后管理</th>
+              <th>担保资格审查</th>
+              <th>特约商户实名审查</th>
+            </tr>
+            <tr>
+              <td>{{ QueryRecordSummary.LOANAPPROVAL_ORG }}</td>
+              <td>{{ QueryRecordSummary.CREDITAPPROVAL_ORG }}</td>
+              <td>{{ QueryRecordSummary.LOANAPPROVAL_QUERY }}</td>
+              <td>{{ QueryRecordSummary.CREDITAPPROVAL_QUERY }}</td>
+              <td>{{ QueryRecordSummary.PERSONAL_QUERY }}</td>
+              <td>{{ QueryRecordSummary.LOANMANAGE }}</td>
+              <td>{{ QueryRecordSummary.GUARANTEEREVIEW }}</td>
+              <td>{{ QueryRecordSummary.MERCNAMEREVIEW }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive table-detail check-detail">
+          <table class="table table-hover table-bordered">
+            <tr><th colspan="4">信贷审批查询记录明细</th></tr>
+            <tr class="edit-title">
+              <th>编号</th>
+              <th>查询日期</th>
+              <th>查询操作员</th>
+              <th>查询原因</th>
+            </tr>
+            {% for item in CreditApprovalQueryRecordDetail %}
+            <tr class="check-list">
+              <td></td>
+              <td>{{ item.QUERYDATE }}</td>
+              <td>{{ item.OPER }}</td>
+              <td>{{ item.QUERYREASONNAME }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="operate-page">
+      <ul class="pager">
+        <li class="disabled"><a href="javascript:void(0)" class="prev-page">上一页</a></li>
+        <li><a href="javascript:void(0)" class="next-page">下一页</a></li>
+      </ul>
+    </div>
+    <div class="operate">
+      <a href="javascript:void(0)"><button type="button" class="btn btn-primary btn-lg back-step">返回</button></a>
+      <a href="{% url 'loan_option' %}"><button type="button" class="btn btn-primary btn-lg next-step">下一步</button></a>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    $(document).ready(function(){
+      var previewSteps = 0;
+      var stepLen =$(".preview .table-report").length;
+      $(document).on("click",".preview .prev-page",function(){
+        previewSteps--;
+        $(".preview .next-page").parent().removeClass("disabled");
+        if(previewSteps <= 0 ){
+          previewSteps = 0;
+          $(this).parent().addClass("disabled");
+        }
+        $(".preview .table-report").hide();
+        $(".preview .table-report").eq(previewSteps).show();
+      });
+      $(document).on("click",".preview .next-page",function(){
+        previewSteps++;
+        $(".preview .prev-page").parent().removeClass("disabled");
+        if(previewSteps >= stepLen-1 ){
+          previewSteps = stepLen-1;
+          $(this).parent().addClass("disabled")
+        }
+        $(".preview .table-report").hide();
+        $(".preview .table-report").eq(previewSteps).show();
+      });
+    });
+  })();
+</script>
+{% endblock %}

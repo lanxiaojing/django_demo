@@ -1,0 +1,20 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% block head_title %}{% trans "Account" %}{% endblock %}
+{% block subnav %}{% endblock %}
+
+{% block body %}
+    <div class="row email_box">
+        <div class="col-md-5 change_email">
+        <legend class="email_nav">{% trans "Account" %}</legend>
+            <form method="POST" action="{% url "account_settings" %}">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button class="btn btn-primary" type="submit">{% trans "Save" %}</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Log out" %}{% endblock %}
+
+{% block content %}
+    <div class="row email_box">
+        <div class="col-md-5 change_email">
+        <legend class="email_nav">{% trans "Log out" %}</legend>
+            <form method="POST" action="{% url "account_logout" %}">
+                <fieldset>
+                    {% csrf_token %}
+                    <p class="col-md-offset-1">{% trans "Are you sure you want to log out?" %}</p>
+                    <button type="submit" class="btn btn-primary col-md-offset-4">{% trans "Log out" %}</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

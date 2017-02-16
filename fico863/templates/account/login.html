@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load account_tags %}
+{% load i18n %}
+{% load bootstrap %}
+{%block sidebar%}{%endblock%}
+{% block head_title %}{% trans "Log in" %}{% endblock %}
+
+{% block content %}
+<div class="login_box">
+    <div class="user_login">
+        <div class="user_nav">用户登录</div>
+        <form class="form-horizontal" method="POST" action="{% url 'account_login' %}" autocapitalize="off" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+            {% csrf_token %}
+            {{ form }}
+            <a href="{% url "account_password_reset" %}" target="_self" class="btn btn-link">忘记密码?</a>
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <button type="submit" class="btn btn-primary btn-md">登录</button>
+                </div>
+            </div>
+        </form>
+        {% if ACCOUNT_OPEN_SIGNUP %}
+        <p class="login-signup">
+        <small>
+            {% trans "Don't have an account?" %}  <strong><a href="{% urlnext 'account_signup' %}">{% trans "Sign up" %}</a></strong>
+        </small>
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#id_username').focus();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,4 @@
+.query_history{float:left;width:75%;padding:100px 3%;}
+.query_history table{position:relative;}
+.query_history table thead{background-color: #ececec;font-size: 18px;font-weight: 800;}
+.query_history table tbody{background-color: #fff; font-size: 16px;color:#888888;}

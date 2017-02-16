@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content%}
+<div class="format-choose">
+    <div class="panel panel-default">
+        <div class="panel-body">
+         <div class="graybox">
+            <div class="form-group choose-left">
+              <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+                <label class="choose-title" >选择文件:</label>
+                  <div class="input-group format-path">
+                      <input type="text" class="form-control" />
+                        <span class="input-group-btn">
+                          <label class="btn btn-default input-path"  for="input-file">
+                              <input name="avatar" id="input-file" type="file"  />
+                              浏览...
+                          </label>
+                        </span>
+                  </div>
+                  <input type="submit" value="上传" class="btn btn-primary" />
+                  <!-- <a href="javascript:void(0)" class="upload-btn" ><input type="submit" value="上传" class="btn btn-primary" /></a> -->
+              </form>
+              <p class="help-block col-md-offset-2">支持格式：jpg &nbsp; &nbsp;pdf &nbsp; &nbsp;  word</p>
+            </div>
+            </div>
+            <div class="form-group choose-right">
+                <a href="javascript:void(0)"><button type="button" class="btn btn-primary">API</button></a>
+                <a href="{% url 'manual_input' %}"><button type="button" class="btn btn-primary">手工录入</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function(){
+        $(document).ready(function(){
+            $("#input-file").change(function() {
+                var data = new FormData();
+                $.each($('#input-file')[0].files, function(i, file){
+                    data.append('avatar', file);
+                });
+                $(".format-path .form-control").val($("#input-file").val());
+            });
+            $(".format-choose .upload-btn").click(function(){
+                // File_format_upload();
+            });
+
+            /* function File_format_upload(){
+                var locat=$("input[name='avatar']").val();
+                var point = locat.lastIndexOf(".");
+                var type = locat.substr(point);
+                if(type==""){
+                    alert("上传文件不能为空。");
+                    return false;
+                }else{
+                    if(type==".html"){
+                        $.ajax({
+                            url:"",
+                            type:'POST',
+                            cache:false,
+                            data:{},
+                            dataType: 'json',
+                            contentType: false,
+                            processData: false,
+                            success:function(data){
+                                alert("文件上传成功。");
+                            },
+                            error:function() {
+                                alert("请求异常");
+                            }
+                        });
+                    }
+                    else{
+                        alert("请上传正确格式的文件。");
+                        return false;
+                    }
+
+                }
+
+            }*/
+        });
+    })();
+</script>
+{% endblock %}

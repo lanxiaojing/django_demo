@@ -1,0 +1,9 @@
+.login_box{width:100%;}
+.login_box .user_login{border: 1px solid #ccc;width:355px;height:350px; margin:130px auto;background-color: #f5f4f4;border-radius: 5px;}
+.login_box .user_login .user_nav{height: 37px;color:#ff0000;line-height: 37px;font-size:20px;margin-top: 25px;text-align: center;font-weight: 900;}
+.login_box .user_login form{width:250px;height:250px;margin:auto;font-size: 16px;font-weight: 900;padding-top: 10%;}
+.login_box .user_login form button{padding: 8px 90px;margin: 30px -25px;}
+.login_box .user_login form label{width:68px;margin-top: 10px;}
+.login_box .user_login form a{display: inline-block;position: relative;right:-80px;font-size: 13px;font-size: 13px;text-decoration: none;}
+.login_box .user_login form ul{display: inline;}
+.login_box .user_login form li{font-size:16px;color:#f36a7a;}
